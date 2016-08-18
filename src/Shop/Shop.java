@@ -3,34 +3,16 @@ package Shop;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.TreeSet;
-
 import Offer.Offer;
 import Offer.ICategory;
 import User.User;
 
 public class Shop {
+	public static ArrayList<Offer> allOffers = new ArrayList<>();
+	public static HashMap<ICategory,ArrayList<Offer>> offersByCategory = new HashMap<>();
+	public static HashMap<User,ArrayList<Offer>> userAndOffer = new HashMap<>();
+	public static HashSet<User> users = new HashSet<>();
 	
-	
-	private static HashMap<ICategory,ArrayList<Offer>> offersByCategory = new HashMap<>();
-	private static HashMap<User,ArrayList<Offer>> userAndOffer = new HashMap<>();
-	private static HashSet<User> users = new HashSet<>();
-	
-	
-	public static HashSet<User> getUsers() {
-		return users;
-	}
-	
-	public static HashMap<ICategory, ArrayList<Offer>> getOffersByCategory() {
-		return offersByCategory;
-	}
-	
-	public static HashMap<User, ArrayList<Offer>> getUserAndOffer() {
-		return userAndOffer;
-	}
 	
 	public static boolean checkUser(String userName){
 		for (User u : users) {
@@ -42,10 +24,30 @@ public class Shop {
 	}
 	
 	public static void showUsersAndOffers(){
+		if(userAndOffer.isEmpty()){
+			System.out.println("Empty List!");
+			return;
+		}
 		for (User u : userAndOffer.keySet()  ) {
 			System.out.println("---------------");
-			System.out.println(u.getUserName());
-			u.getMyOffer();
+			System.out.println("User: "+u.getUserName());
+			u.showMyOffer();
+		}
+	}
+	
+	public static void showUsers(){
+		for (User u : userAndOffer.keySet()  ) {
+			System.out.println("---------------");
+			System.out.println("User Name: " + u.getUserName());
+			System.out.println("Address: " + u.getAddress());
+			System.out.println("Phone Number:" + u.getPhoneNumber());
+			System.out.println("Age:" + u.getAge());
+		}
+	}
+	
+	public static void showAllOfers(){
+		for (User u : userAndOffer.keySet()  ) {
+			u.showMyOffer();
 		}
 	}
 }

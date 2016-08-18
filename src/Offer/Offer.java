@@ -1,7 +1,7 @@
 package Offer;
 
 import User.User;
-
+import Shop.Shop;
 public class Offer {
 	
 	private String name;
@@ -26,14 +26,11 @@ public class Offer {
 		}
 		this.location = location;
 		this.category = category;
+		Shop.allOffers.add(this);
 		
 	}
-
-	void changeOfferOname(String newName){
-		// TODO Auto-generated method stub
-	}
 	
-	protected void setUser(User u){
+	public void setUser(User u){
 		this.user = u;
 	}
 	
@@ -67,5 +64,10 @@ public class Offer {
 
 	public ICategory getCategory() {
 		return category;
+	}
+
+	public void setName(String newName) {
+		this.name = newName;
+		
 	}
 }
