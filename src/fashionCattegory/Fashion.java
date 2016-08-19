@@ -1,6 +1,9 @@
-package Offer;
+package fashionCattegory;
 
 import java.util.ArrayList;
+
+import Offer.ICategory;
+import Offer.Offer;
 
 public abstract class Fashion implements ICategory{
 	

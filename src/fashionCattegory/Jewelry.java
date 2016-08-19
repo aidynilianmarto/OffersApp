@@ -1,6 +1,9 @@
-package Offer;
+package fashionCattegory;
 
 import java.util.ArrayList;
+
+import Offer.ICategory;
+import Offer.Offer;
 
 public abstract class Jewelry extends Fashion{
 	
@@ -17,6 +20,9 @@ public abstract class Jewelry extends Fashion{
 		
 		private ArrayList<Offer> offers;
 		private Bracelet instance = new Bracelet();
+		
+		private Bracelet(){}
+		
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
@@ -39,6 +45,9 @@ public abstract class Jewelry extends Fashion{
 		
 		private ArrayList<Offer> offers;
 		private Earing instance = new Earing();
+		
+		private Earing(){}
+		
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
@@ -61,6 +70,9 @@ public abstract class Jewelry extends Fashion{
 	
 		private ArrayList<Offer> offers;
 		private Necklace instance = new Necklace();
+		
+		private Necklace(){}
+		
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
@@ -83,6 +95,9 @@ public abstract class Jewelry extends Fashion{
 		
 		private ArrayList<Offer> offers;
 		private Ring instance = new Ring();
+		
+		private Ring(){}
+		
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
