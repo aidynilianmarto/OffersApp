@@ -2,7 +2,7 @@ package Offer;
 
 import User.User;
 import Shop.Shop;
-public class Offer {
+public class Offer{
 	
 	private String name;
 	private double price;
