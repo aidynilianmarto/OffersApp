@@ -2,7 +2,6 @@ package fashionCattegory;
 
 import java.util.ArrayList;
 
-import Offer.ICategory;
 import Offer.Offer;
 
 public abstract class Jewelry extends Fashion{
@@ -18,10 +17,9 @@ public abstract class Jewelry extends Fashion{
 	
 	public static class Bracelet extends Jewelry{
 		
-		private ArrayList<Offer> offers;
-		private Bracelet instance = new Bracelet();
+		private static ArrayList<Offer> offers;
 		
-		private Bracelet(){}
+		public Bracelet(){}
 		
 		@Override
 		public void addOffer(Offer offer) {
@@ -30,23 +28,19 @@ public abstract class Jewelry extends Fashion{
 				offers.add(offer);
 			}
 		}
-		@Override
-		public ICategory getInstance() {
-			return instance;
-		}
+		
 		@Override
 		public void getListOfOffers() {
-			System.out.println(this.offers);
+			System.out.println(offers);
 		}
 	
 	}
 	
 	public static class Earing extends Jewelry{
 		
-		private ArrayList<Offer> offers;
-		private Earing instance = new Earing();
+		private static ArrayList<Offer> offers;
 		
-		private Earing(){}
+		public Earing(){}
 		
 		@Override
 		public void addOffer(Offer offer) {
@@ -55,23 +49,19 @@ public abstract class Jewelry extends Fashion{
 				offers.add(offer);
 			}
 		}
-		@Override
-		public ICategory getInstance() {
-			return instance;
-		}
+		
 		@Override
 		public void getListOfOffers() {
-			System.out.println(this.offers);
+			System.out.println(offers);
 		}
 	
 	}
 
 	public static class Necklace extends Jewelry{
 	
-		private ArrayList<Offer> offers;
-		private Necklace instance = new Necklace();
+		private static ArrayList<Offer> offers;
 		
-		private Necklace(){}
+		public Necklace(){}
 		
 		@Override
 		public void addOffer(Offer offer) {
@@ -80,21 +70,17 @@ public abstract class Jewelry extends Fashion{
 				offers.add(offer);
 			}
 		}
-		@Override
-		public ICategory getInstance() {
-			return instance;
-		}
+		
 		@Override
 		public void getListOfOffers() {
-			System.out.println(this.offers);
+			System.out.println(offers);
 		}
 	
 	}
 
 	public static class Ring extends Jewelry{
 		
-		private ArrayList<Offer> offers;
-		private Ring instance = new Ring();
+		private static ArrayList<Offer> offers;
 		
 		private Ring(){}
 		
@@ -105,13 +91,10 @@ public abstract class Jewelry extends Fashion{
 				offers.add(offer);
 			}
 		}
-		@Override
-		public ICategory getInstance() {
-			return instance;
-		}
+		
 		@Override
 		public void getListOfOffers() {
-			System.out.println(this.offers);
+			System.out.println(offers);
 		}
 	
 	}

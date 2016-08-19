@@ -2,7 +2,6 @@ package fashionCattegory;
 
 import java.util.ArrayList;
 
-import Offer.ICategory;
 import Offer.Offer;
 
 public abstract class Watch extends Fashion{
@@ -18,10 +17,9 @@ public abstract class Watch extends Fashion{
 
 	public static class ManWatch extends Watch{
 		
-		private ArrayList<Offer> offers;
-		private ManWatch instance = new ManWatch();
+		private static ArrayList<Offer> offers;
 		
-		private ManWatch(){}
+		public ManWatch(){}
 		
 		@Override
 		public void addOffer(Offer offer) {
@@ -29,23 +27,19 @@ public abstract class Watch extends Fashion{
 				offers.add(offer);
 			}
 		}
-		@Override
-		public ICategory getInstance() {
-			return instance;
-		}
+		
 		@Override
 		public void getListOfOffers() {
-			System.out.println(this.offers);
+			System.out.println(offers);
 		}
 		
 	}
 	
 	public static class WemenWatch extends Watch{
 		
-		private ArrayList<Offer> offers;
-		private WemenWatch instance = new WemenWatch();
+		private static ArrayList<Offer> offers;
 		
-		private WemenWatch(){}
+		public WemenWatch(){}
 		
 		@Override
 		public void addOffer(Offer offer) {
@@ -53,13 +47,10 @@ public abstract class Watch extends Fashion{
 				offers.add(offer);
 			}
 		}
-		@Override
-		public ICategory getInstance() {
-			return instance;
-		}
+		
 		@Override
 		public void getListOfOffers() {
-			System.out.println(this.offers);
+			System.out.println(offers);
 		}
 		
 	}
