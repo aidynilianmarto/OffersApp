@@ -8,7 +8,9 @@ public abstract class Jewelry extends Fashion{
 	
 	@Override
 	protected void addToList(Offer offer){
-		offers.add(offer);
+		if(offer.getCategory() instanceof Jewelry){
+			offers.add(offer);
+		}
 	}
 	
 	public static class Bracelet extends Jewelry{
