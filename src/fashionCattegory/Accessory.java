@@ -21,7 +21,8 @@ public abstract class Accessory extends Fashion{
 		private ArrayList<Offer> offers;
 		private Bag instance = new Bag();
 		
-		private Bag(){}
+		private Bag(){
+		}
 
 		@Override
 		public void addOffer(Offer offer) {
@@ -31,7 +32,6 @@ public abstract class Accessory extends Fashion{
 			}
 		}
 
-		@Override
 		public ICategory getInstance() {
 			return instance;
 		}
@@ -39,6 +39,11 @@ public abstract class Accessory extends Fashion{
 		@Override
 		public void getListOfOffers() {
 			System.out.println(this.offers);
+		}
+
+		@Override
+		public String getName() {
+			return this.name;
 		}
 		
 	}

@@ -6,10 +6,10 @@ import Offer.ICategory;
 import Offer.Offer;
 
 public abstract class Fashion implements ICategory{
-	
+
+	public static String name;
 	private ArrayList<Offer> offers;
-	
-	protected Fashion(){
+	public Fashion(){
 		offers = new ArrayList<Offer>();
 	}
 	

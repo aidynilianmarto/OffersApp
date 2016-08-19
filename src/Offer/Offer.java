@@ -13,7 +13,7 @@ public class Offer{
 	private String location;
 	private ICategory category;
 	
-	public Offer(String name, double price, String deadLine,String description,String location, ICategory category) {
+	public Offer(String name, double price, String deadLine,String description,String location) {
 		if(name!=null && !(name.isEmpty())){
 			this.name = name;
 		}
@@ -69,5 +69,9 @@ public class Offer{
 	public void setName(String newName) {
 		this.name = newName;
 		
+	}
+
+	public void setCategory(ICategory c) {
+		this.category = c;
 	}
 }

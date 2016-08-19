@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
+import fashionCattegory.Fashion;
 import Offer.ICategory;
 import Offer.Offer;
 import Shop.Shop;
@@ -104,6 +105,7 @@ public class User implements IUser{
 			System.out.println("The offer is added!");
 			Shop.userAndOffer.get(this).add(o);
 			o.setUser(this);
+			o.setCategory(c);
 			Shop.allOffers.add(o);
 			myOffer.add(o);
 		}else{
@@ -268,6 +270,7 @@ public class User implements IUser{
 		for (int i = 0; i < myOffer.size(); i++) {
 			System.out.println("-----Offer " + (i+1) + "-----" );
 			System.out.println("Name: " + myOffer.get(i).getName() );
+			System.out.println("Category: : " + Fashion.name );
 			System.out.println("User: " + myOffer.get(i).getUser().getName());
 			System.out.println("Description: " + myOffer.get(i).getDescription() );
 			System.out.println("Price: " + myOffer.get(i).getPrice() );
