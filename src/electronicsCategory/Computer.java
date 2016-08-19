@@ -1,62 +1,60 @@
-package fashionCattegory;
+package electronicsCategory;
 
 import java.util.ArrayList;
+
 import Offer.Offer;
 
-public abstract class Shoe extends Fashion{
-	
+public abstract class Computer extends Electronics{
+
 	private ArrayList<Offer> offers;
 	
 	@Override
 	protected void addToList(Offer offer){
-		if(offer.getCategory() instanceof Shoe){
+		if(offer.getCategory() instanceof Computer){
 			offers.add(offer);
 		}
 	}
 	
-	public static class ManShoes extends Shoe{
+	public static class Laptop extends Computer{
 		
 		private static ArrayList<Offer> offers;
-		public static final String NAME = "Man shoes";
-
 		
-		public ManShoes(){}
-
+		public Laptop(){}
+		
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
-			if(offer.getCategory() instanceof ManShoes){
+			if(offer.getCategory() instanceof Laptop){
 				offers.add(offer);
 			}
 		}
-
+		
 		@Override
 		public void getListOfOffers() {
 			System.out.println(offers);
 		}
 		
 	}
-
-	public static class WemenShoes extends Shoe{
+	
+	public static class Desktop extends Computer{
 		
 		private static ArrayList<Offer> offers;
-		public static final String NAME = "Wemen shoes";
-
 		
-		public WemenShoes(){}
-
+		public Desktop(){}
+		
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
-			if(offer.getCategory() instanceof WemenShoes){
+			if(offer.getCategory() instanceof Laptop){
 				offers.add(offer);
 			}
 		}
-
+		
 		@Override
 		public void getListOfOffers() {
 			System.out.println(offers);
 		}
 		
 	}
+	
 }

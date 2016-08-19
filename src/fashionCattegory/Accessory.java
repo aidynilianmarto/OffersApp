@@ -18,6 +18,7 @@ public abstract class Accessory extends Fashion{
 	public static class Bag extends Accessory{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Bags";
 		
 		public Bag(){}
 
@@ -39,6 +40,7 @@ public abstract class Accessory extends Fashion{
 	public static class Tie extends Accessory{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Ties";
 		
 		public Tie(){}
 
@@ -60,6 +62,7 @@ public abstract class Accessory extends Fashion{
 	public static class Hat extends Accessory{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Hats";
 		
 		public Hat(){}
 		
@@ -81,6 +84,7 @@ public abstract class Accessory extends Fashion{
 	public static class Glasses extends Accessory{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Glasses";
 		
 		public Glasses(){}
 		

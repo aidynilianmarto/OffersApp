@@ -20,6 +20,8 @@ public abstract class Cloth extends Fashion{
 	public static class ManCloth extends Cloth{
 		
 		private  static ArrayList<Offer> offers;
+		public static final String NAME = "Man clothes";
+
 		
 		public ManCloth(){}
 
@@ -42,6 +44,8 @@ public abstract class Cloth extends Fashion{
 	public static class WemenCloth extends Cloth{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Wemen clothes";
+
 		
 		public WemenCloth(){}
 

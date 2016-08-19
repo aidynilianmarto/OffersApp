@@ -18,6 +18,8 @@ public abstract class Watch extends Fashion{
 	public static class ManWatch extends Watch{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Man watches";
+
 		
 		public ManWatch(){}
 		
@@ -38,6 +40,8 @@ public abstract class Watch extends Fashion{
 	public static class WemenWatch extends Watch{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Wemen watches";
+
 		
 		public WemenWatch(){}
 		

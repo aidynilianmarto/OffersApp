@@ -18,6 +18,8 @@ public abstract class Jewelry extends Fashion{
 	public static class Bracelet extends Jewelry{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Bracelets";
+
 		
 		public Bracelet(){}
 		
@@ -39,6 +41,8 @@ public abstract class Jewelry extends Fashion{
 	public static class Earing extends Jewelry{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Earings";
+
 		
 		public Earing(){}
 		
@@ -60,6 +64,8 @@ public abstract class Jewelry extends Fashion{
 	public static class Necklace extends Jewelry{
 	
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Necklaces";
+
 		
 		public Necklace(){}
 		
@@ -81,6 +87,8 @@ public abstract class Jewelry extends Fashion{
 	public static class Ring extends Jewelry{
 		
 		private static ArrayList<Offer> offers;
+		public static final String NAME = "Rings";
+
 		
 		private Ring(){}
 		
