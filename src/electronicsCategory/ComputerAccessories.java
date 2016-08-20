@@ -6,122 +6,193 @@ import Offer.Offer;
 
 public abstract class ComputerAccessories extends Electronics{
 	
-	private ArrayList<Offer> offers;
+	private static ArrayList<Offer> computerAccessoriesOffers;
+	
+	public ComputerAccessories() {
+		super();
+		computerAccessoriesOffers = new ArrayList<>();
+	}
 	
 	@Override
-	protected void addToList(Offer offer){
-		if(offer.getCategory() instanceof Computer){
-			offers.add(offer);
+	public void deleteOffer(Offer o) {
+		super.deleteOffer(o);
+		computerAccessoriesOffers.remove(o);
+	}
+	
+	public static void showAccessoryList(){
+		if(computerAccessoriesOffers.size()==0){
+			System.out.println("No offers in this category!");
 		}
+		for (int i = 0; i < computerAccessoriesOffers.size(); i++) {
+			System.out.println("Name: " + computerAccessoriesOffers.get(i).getName());
+			System.out.println("User: " + computerAccessoriesOffers.get(i).getUser().getName());
+			System.out.println("Category: Accessorry");
+			System.out.println("Description: " + computerAccessoriesOffers.get(i).getDescription());
+			System.out.println("Price: " + computerAccessoriesOffers.get(i).getPrice());
+		}
+	}
+	@Override
+	protected void addToList(Offer offer){
+		computerAccessoriesOffers.add(offer);
 	}
 	
 	public static class Cable extends ComputerAccessories{
 		
-		private static ArrayList<Offer> offers;
+		private static ArrayList<Offer> cableOffers;
 		public static final String NAME = "Cables";
-
-		public Cable(){}
+		Cable instance = new Cable();
+		public Cable(){
+			super();
+			cableOffers = new ArrayList<>();
+		}
 
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
-			if(offer.getCategory() instanceof Cable){
-				offers.add(offer);
-			}
+			cableOffers.add(offer);
 		}
 
 		@Override
-		public void getListOfOffers() {
-			System.out.println(offers);
+		public ArrayList<Offer> getListOfOffers() {
+			return cableOffers;
 		}
+
+		@Override
+		public String getCategoryName() {
+			return NAME;
+		}
+		
+		public Cable getInstance() {
+			return instance;
+		}
+		
+		
 		
 	}
 	
 	public static class Mouse extends ComputerAccessories{
 			
-			private static ArrayList<Offer> offers;
-			public static final String NAME = "Mice";
+			private static ArrayList<Offer> mouseOffers;
+			public static final String NAME = "Mouse";
+			Mouse instance = new Mouse();
 			
-			public Mouse(){}
+			public Mouse(){
+				super();
+				mouseOffers = new ArrayList<>();
+			}
 	
 			@Override
 			public void addOffer(Offer offer) {
 				super.addToList(offer);
-				if(offer.getCategory() instanceof Mouse){
-					offers.add(offer);
-				}
+				mouseOffers.add(offer);
 			}
 	
 			@Override
-			public void getListOfOffers() {
-				System.out.println(offers);
+			public ArrayList<Offer> getListOfOffers() {
+				return mouseOffers;
 			}
 			
+			@Override
+			public String getCategoryName() {
+				return NAME;
+			}
+			
+			public Mouse getInstance() {
+				return instance;
+			}
 		}
 	
 	public static class Keyboard extends ComputerAccessories{
 		
-		private static ArrayList<Offer> offers;
+		private static ArrayList<Offer> keyboardOffers;
 		public static final String NAME = "Keyboards";
-	
-		public Keyboard(){}
+		Keyboard instance = new Keyboard();
+		public Keyboard(){
+			super();
+			keyboardOffers = new ArrayList<>();
+		}
 	
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
-			if(offer.getCategory() instanceof Keyboard){
-				offers.add(offer);
-			}
+			keyboardOffers.add(offer);
 		}
 	
 		@Override
-		public void getListOfOffers() {
-			System.out.println(offers);
+		public ArrayList<Offer> getListOfOffers() {
+			return keyboardOffers;
 		}
 		
+		@Override
+		public String getCategoryName() {
+			return NAME;
+		}
+		
+		public Keyboard getInstance() {
+			return instance;
+		}
 	}
 	
 	
 	public static class Other extends ComputerAccessories{
 		
-		private static ArrayList<Offer> offers;
+		private static ArrayList<Offer> otherOffers;
 		public static final String NAME = "Other";
-		
-		public Other(){}
+		Other instance = new Other();
+		public Other(){
+			super();
+			otherOffers = new ArrayList<>();
+		}
 	
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
-			if(offer.getCategory() instanceof Other){
-				offers.add(offer);
-			}
+			otherOffers.add(offer);
 		}
 	
 		@Override
-		public void getListOfOffers() {
-			System.out.println(offers);
+		public ArrayList<Offer> getListOfOffers() {
+			return otherOffers;
 		}
 		
+		@Override
+		public String getCategoryName() {
+			return NAME;
+		}
+		
+		public Other getInstance() {
+			return instance;
+		}
 	}
 	
 	public static class Camera extends ComputerAccessories{
 		
-		private static ArrayList<Offer> offers;
+		private static ArrayList<Offer> cameraOffers;
 		public static final String NAME = "Cameras";
-	
-		public Camera(){}
+		Camera instance = new Camera();
+		public Camera(){
+			super();
+			cameraOffers = new ArrayList<>();
+		}
 	
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
-			if(offer.getCategory() instanceof Camera){
-				offers.add(offer);
-			}
+			cameraOffers.add(offer);
 		}
 	
 		@Override
-		public void getListOfOffers() {
-			System.out.println(offers);
+		public ArrayList<Offer> getListOfOffers() {
+			return cameraOffers;
+		}
+		
+		@Override
+		public String getCategoryName() {
+			return NAME;
+		}
+		
+		public Camera getInstance() {
+			return instance;
 		}
 		
 	}

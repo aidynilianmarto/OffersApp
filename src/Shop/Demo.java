@@ -14,10 +14,10 @@ public class Demo {
 	public static void main(String[] args) {
 		User pesho = User.registration("Petur", "pesho", "123456789", "petur_ivanov@gmail.bg");
 		User gosho = User.registration("Georgi", "goshko", "123456789", "goshko@gmail.com");
-		Accessory bagAccessory = Bag.getInstance();
-		Accessory tieAccessory = Tie.getInstance();
-		Accessory hatAccessory = Hat.getInstance();
-		Accessory glassAccessory = Glasses.getInstance();
+		Fashion bagAccessory = Bag.getInstance();
+		Fashion tieAccessory = Tie.getInstance();
+		Fashion hatAccessory = Hat.getInstance();
+		Fashion glassAccessory = Glasses.getInstance();
 		Offer o1 = new Offer("Phone", 200,"Много Запазен!", "София");
 		Offer o2 = new Offer("TV", 1000 , "FullHD", "Пловдив");
 		Offer o3 = new Offer("FlashMemory", 21,"16GB Free Space", "Търново");
