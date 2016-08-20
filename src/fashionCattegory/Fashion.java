@@ -20,6 +20,7 @@ public abstract class Fashion implements ICategory{
 	public static void showFashionOffer(){
 		if(fashionOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < fashionOffers.size(); i++) {
 			System.out.println("Name: " + fashionOffers.get(i).getName());

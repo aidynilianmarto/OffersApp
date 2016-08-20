@@ -20,6 +20,7 @@ private static ArrayList<Offer> birdOffers;
 	public static void showBirdsList(){
 		if(birdOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < birdOffers.size(); i++) {
 			System.out.println("Name: " + birdOffers.get(i).getName());

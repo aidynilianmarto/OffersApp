@@ -19,6 +19,7 @@ public abstract class Fish extends Animal {
 	public static void showFishesList() {
 		if (fishOffers.size() == 0) {
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < fishOffers.size(); i++) {
 			System.out.println("Name: " + fishOffers.get(i).getName());

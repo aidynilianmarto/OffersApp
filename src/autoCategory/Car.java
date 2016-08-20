@@ -21,6 +21,7 @@ public abstract class Car extends Automobile{
 	public void showCarList(){
 		if(carOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < carOffers.size(); i++) {
 			System.out.println("Name: " + carOffers.get(i).getName());

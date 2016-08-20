@@ -20,6 +20,7 @@ private static ArrayList<Offer> dogOffers;
 	public static void showDogsList(){
 		if(dogOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < dogOffers.size(); i++) {
 			System.out.println("Name: " + dogOffers.get(i).getName());

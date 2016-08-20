@@ -20,6 +20,7 @@ public abstract class Automobile implements ICategory{
 	public static void showAutoOffer(){
 		if(autoOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < autoOffers.size(); i++) {
 			System.out.println("Name: " + autoOffers.get(i).getName());

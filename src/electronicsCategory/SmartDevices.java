@@ -21,6 +21,7 @@ public abstract class SmartDevices extends Electronics{
 	public static void showAccessoryList(){
 		if(smartDevicesOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < smartDevicesOffers.size(); i++) {
 			System.out.println("Name: " + smartDevicesOffers.get(i).getName());

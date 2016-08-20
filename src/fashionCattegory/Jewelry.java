@@ -23,6 +23,7 @@ public abstract class Jewelry extends Fashion{
 	public static void showAccessoryList(){
 		if(jewelryOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < jewelryOffers.size(); i++) {
 			System.out.println("Name: " + jewelryOffers.get(i).getName());

@@ -22,6 +22,7 @@ public abstract class Appliances extends Electronics{
 	public static void showAccessoryList(){
 		if(applianceOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < applianceOffers.size(); i++) {
 			System.out.println("Name: " + applianceOffers.get(i).getName());

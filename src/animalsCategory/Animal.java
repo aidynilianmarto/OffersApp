@@ -18,6 +18,7 @@ public abstract class Animal implements ICategory {
 		public static void showAnimalOffer(){
 			if(animalOffers.size()==0){
 				System.out.println("No offers in this category!");
+				return;
 			}
 			for (int i = 0; i < animalOffers.size(); i++) {
 				System.out.println("Name: " + animalOffers.get(i).getName());

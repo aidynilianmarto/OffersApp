@@ -21,6 +21,7 @@ public abstract class Computer extends Electronics{
 	public static void showAccessoryList(){
 		if(computerOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < computerOffers.size(); i++) {
 			System.out.println("Name: " + computerOffers.get(i).getName());

@@ -20,6 +20,7 @@ private static ArrayList<Offer> electronicOffers;
 	public static void showFashionOffer(){
 		if(electronicOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < electronicOffers.size(); i++) {
 			System.out.println("Name: " + electronicOffers.get(i).getName());

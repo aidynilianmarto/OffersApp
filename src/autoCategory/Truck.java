@@ -21,6 +21,7 @@ public abstract class Truck extends Automobile{
 	public void showTruckList(){
 		if(truckOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < truckOffers.size(); i++) {
 			System.out.println("Name: " + truckOffers.get(i).getName());

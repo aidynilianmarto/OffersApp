@@ -22,6 +22,7 @@ public abstract class Cloth extends Fashion{
 	public static void showAccessoryList(){
 		if(clothOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < clothOffers.size(); i++) {
 			System.out.println("Name: " + clothOffers.get(i).getName());

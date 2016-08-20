@@ -21,6 +21,7 @@ public abstract class Bus extends Automobile{
 	public void showBusList(){
 		if(busOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < busOffers.size(); i++) {
 			System.out.println("Name: " + busOffers.get(i).getName());

@@ -20,6 +20,7 @@ public abstract class Cat extends Animal {
 	public static void showcCatsList() {
 		if (catOffers.size() == 0) {
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < catOffers.size(); i++) {
 			System.out.println("Name: " + catOffers.get(i).getName());

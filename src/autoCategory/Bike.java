@@ -21,6 +21,7 @@ public abstract class Bike extends Automobile{
 	public void showBikeList(){
 		if(bikeOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < bikeOffers.size(); i++) {
 			System.out.println("Name: " + bikeOffers.get(i).getName());

@@ -23,6 +23,7 @@ public abstract class Watch extends Fashion{
 	public static void showAccessoryList(){
 		if(watchOffers.size()==0){
 			System.out.println("No offers in this category!");
+			return;
 		}
 		for (int i = 0; i < watchOffers.size(); i++) {
 			System.out.println("Name: " + watchOffers.get(i).getName());
