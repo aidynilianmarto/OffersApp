@@ -50,6 +50,12 @@ public abstract class Fish extends Animal {
 			super.addToList(offer);
 			aquariumOffers.add(offer);
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			aquariumOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -81,6 +87,12 @@ public abstract class Fish extends Animal {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			otherOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			otherOffers.remove(o);
 		}
 
 		@Override

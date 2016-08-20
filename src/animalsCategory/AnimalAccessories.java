@@ -50,6 +50,12 @@ public abstract class AnimalAccessories extends Animal {
 			super.addToList(offer);
 			strapOffers.add(offer);
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			strapOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -75,6 +81,12 @@ public abstract class AnimalAccessories extends Animal {
 
 		protected Toy() {
 			toysOffers = new ArrayList<>();
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			toysOffers.remove(o);
 		}
 
 		@Override
@@ -113,6 +125,12 @@ public abstract class AnimalAccessories extends Animal {
 			super.addToList(offer);
 			containmentsOffers.add(offer);
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			containmentsOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -142,6 +160,12 @@ public abstract class AnimalAccessories extends Animal {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			foodsOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			foodsOffers.remove(o);
 		}
 
 		@Override
@@ -173,6 +197,12 @@ public abstract class AnimalAccessories extends Animal {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			otherOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			otherOffers.remove(o);
 		}
 
 		@Override

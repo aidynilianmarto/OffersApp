@@ -83,6 +83,12 @@ public abstract class Cat extends Animal {
 			super.addToList(offer);
 			houseCatsOffers.add(offer);
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			houseCatsOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {

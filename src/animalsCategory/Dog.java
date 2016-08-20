@@ -52,6 +52,12 @@ private static ArrayList<Offer> dogOffers;
 		}
 		
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			homelessOffers.remove(o);
+		}
+		
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return homelessOffers;
 			
@@ -80,6 +86,12 @@ private static ArrayList<Offer> dogOffers;
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			houseDogsOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			houseDogsOffers.remove(o);
 		}
 		
 		@Override

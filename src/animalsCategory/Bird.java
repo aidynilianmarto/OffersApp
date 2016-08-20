@@ -52,6 +52,12 @@ private static ArrayList<Offer> birdOffers;
 		}
 		
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			parrotOffers.remove(o);
+		}
+		
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return parrotOffers;
 			
@@ -80,6 +86,12 @@ private static ArrayList<Offer> birdOffers;
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			otherOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			otherOffers.remove(o);
 		}
 		
 		@Override
