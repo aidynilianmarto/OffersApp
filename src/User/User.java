@@ -28,7 +28,7 @@ public class User implements IUser{
 	private Pattern mailPatern = Pattern.compile(EMAIL_PATTERN);
 	private Matcher mailMatcher;
 	private static final String EMAIL_PATTERN ="^[[a-zA-Z_0-9]]+(\\.[[a-zA-Z_0-9]]+)*@" + "[[a-z]]+(\\.bg|\\.com)$";
-	private User(String name,String userName, String password, String email) {
+	protected User(String name,String userName, String password, String email) {
 		if(name!=null && !(name.isEmpty())){
 			this.name = name;
 		}
@@ -51,7 +51,7 @@ public class User implements IUser{
 		isLogIn = false;
 	}
 	
-	private User(String name,String userName, String password, String email,String phoneNumber,String address,int age){
+	protected User(String name,String userName, String password, String email,String phoneNumber,String address,int age){
 		if(name!=null && !(name.isEmpty())){
 			this.name = name;
 		}
@@ -453,6 +453,10 @@ public class User implements IUser{
 	public String getPhoneNumber() {
 		return phoneNumber;
 	} 
+	
+	public boolean getIsLogin(){
+		return isLogIn;
+	}
 	
 	public String getAddress() {
 		return address;

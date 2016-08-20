@@ -9,11 +9,18 @@ import fashionCattegory.Fashion;
 import Offer.ICategory;
 import Offer.Offer;
 import User.User;
-
+import User.Admin;
 public class Demo {
 	public static void main(String[] args) {
 		User pesho = User.registration("Petur", "pesho", "123456789", "petur_ivanov@gmail.bg");
 		User gosho = User.registration("Georgi", "goshko", "123456789", "goshko@gmail.com");
+		Admin admin = Admin.getInstance();
+		//Shop.users.add(admin);
+		//Shop.showUsers();
+		//admin.logIn("admin", "123456789");
+		//admin.removeUser(pesho);
+		//Shop.showUsers();
+		
 		Fashion bagAccessory = Bag.getInstance();
 		Fashion tieAccessory = Tie.getInstance();
 		Fashion hatAccessory = Hat.getInstance();
