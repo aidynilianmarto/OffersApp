@@ -3,6 +3,8 @@ package User;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import Offer.ICategory;
 import Offer.Offer;
@@ -23,7 +25,9 @@ public class User implements IUser{
 	private HashMap<String,String> receivedМessages;
 	private HashMap<String,String> sendМessages;
 	private boolean isLogIn;
-	
+	private Pattern mailPatern = Pattern.compile(EMAIL_PATTERN);
+	private Matcher mailMatcher;
+	private static final String EMAIL_PATTERN ="^[[a-zA-Z_0-9]]+(\\.[[a-zA-Z_0-9]]+)*@" + "[[a-z]]+(\\.bg|\\.com)$";
 	private User(String name,String userName, String password, String email) {
 		if(name!=null && !(name.isEmpty())){
 			this.name = name;
@@ -34,7 +38,11 @@ public class User implements IUser{
 		if(password.length()>=8 ){
 			this.password = password;
 		}
-		this.email = email;
+		if(validateMail(email)){
+			this.email = email;
+		}else{
+			System.out.println("Your Email is Incorect!");
+		}
 		favourite = new HashSet<>();
 		myOffer = new ArrayList<>();
 		archiveOffer = new ArrayList<>();
@@ -53,7 +61,11 @@ public class User implements IUser{
 		if(password.length()>=8 ){
 			this.password = password;
 		}
-		this.email = email;
+		if(validateMail(email)){
+			this.email = email;
+		}else{
+			System.out.println("Your Email is Incorect!");
+		}
 		this.address = address;
 		this.phoneNumber = phoneNumber;
 		this.address = address;
@@ -64,6 +76,11 @@ public class User implements IUser{
 		myOffer = new ArrayList<>();
 		archiveOffer = new ArrayList<>();
 	}
+	
+	public boolean validateMail(final String checkedMail) {
+			mailMatcher = mailPatern.matcher(checkedMail);
+			return mailMatcher.matches();
+		}
 	
 	public static User registration(String name,String userName, String password, String email,String phoneNumber,String address,int age){
 		if(Shop.checkUser(userName)){
@@ -102,8 +119,13 @@ public class User implements IUser{
 
 			}
 			System.out.println("The offer is added!");
+			if(!Shop.userAndOffer.containsKey(this)){
+				Shop.userAndOffer.put(this,	new ArrayList<>());
+			}
 			Shop.userAndOffer.get(this).add(o);
 			o.setUser(this);
+			o.setCategory(c);
+			c.addOffer(o);
 			Shop.allOffers.add(o);
 			myOffer.add(o);
 		}else{
@@ -193,6 +215,11 @@ public class User implements IUser{
 					u.archiveOffer.remove(o);
 					u.favourite.remove(o);
 				}
+				Shop.allOffers.remove(o);
+				Shop.offersByCategory.get(o.getCategory()).remove(o);
+				Shop.userAndOffer.get(this).remove(o);
+				o.getCategory().deleteOffer(o);
+				o.getCategory().getListOfOffers().remove(o);
 				return;
 			}
 			System.out.println("Sorry!The offer was recently removed!");
@@ -230,12 +257,16 @@ public class User implements IUser{
 	@Override
 	public void changeMail(String oldMail, String newMail) {
 		if(this.isLogIn){
-			if(this.email.equals(oldMail)){
-				this.email = newMail;
-				System.out.println("The Email is successfully changed!");
-				return;
+			if(validateMail(newMail)){
+				if(this.email.equals(oldMail)){
+					this.email = newMail;
+					System.out.println("The Email is successfully changed!");
+					return;
+				}
+				System.out.println("Your old Email does not match!Please try againg later!");
+			}else{
+				System.out.println("Wrong Input Email!");
 			}
-			System.out.println("Your old Email does not match!Please try againg later!");
 		}else{
 			System.out.println("You are not Log In!");
 		}
@@ -243,15 +274,15 @@ public class User implements IUser{
 	@Override
 	public void changeOffersName(Offer o,String newName){
 		if(this.isLogIn){
-			for (Offer offer : myOffer) {
-				if(offer.getName().equals(newName)){
-					System.out.println("The names are equals!");
-					return;
-				}
-				if(newName!=null &&!(newName.isEmpty())){
-					offer.setName(newName);
-					return;
-				}
+				if(this.myOffer.contains(o)){
+					if(o.getName().equals(newName)){
+						System.out.println("The names are equals!");
+						return;
+					}
+					if(newName!=null &&!(newName.isEmpty())){
+						o.setName(newName);
+						return;
+					}
 			}
 			System.out.println("You can't change name of this offer!");
 		}else{
@@ -268,6 +299,7 @@ public class User implements IUser{
 		for (int i = 0; i < myOffer.size(); i++) {
 			System.out.println("-----Offer " + (i+1) + "-----" );
 			System.out.println("Name: " + myOffer.get(i).getName() );
+			System.out.println("Category: " + myOffer.get(i).getCategory().getCategoryName() );
 			System.out.println("User: " + myOffer.get(i).getUser().getName());
 			System.out.println("Description: " + myOffer.get(i).getDescription() );
 			System.out.println("Price: " + myOffer.get(i).getPrice() );
@@ -288,6 +320,7 @@ public class User implements IUser{
 			for (Offer o : favourite) {
 				System.out.println("-----Offer " + (++i) + "-----" );
 				System.out.println("Name: " + o.getName() );
+				System.out.println("Category: " + o.getCategory().getCategoryName() );
 				System.out.println("User: " + o.getUser().getName());
 				System.out.println("Description: " + o.getDescription() );
 				System.out.println("Price: " + o.getPrice() );
@@ -311,6 +344,7 @@ public class User implements IUser{
 			for (Offer o : archiveOffer) {
 				System.out.println("-----Offer " + (++i) + "-----" );
 				System.out.println("Name: " + o.getName() );
+				System.out.println("Category: " + o.getCategory().getCategoryName() );
 				System.out.println("User: " + o.getUser().getName());
 				System.out.println("Description: " + o.getDescription() );
 				System.out.println("Price: " + o.getPrice() );
@@ -426,6 +460,10 @@ public class User implements IUser{
 	
 	public String getName() {
 		return name;
+	}
+	
+	public String getEmail() {
+		return email;
 	}
 	
 	

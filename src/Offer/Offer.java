@@ -1,31 +1,31 @@
 package Offer;
 
+import java.time.LocalDateTime;
+
+
 import User.User;
 import Shop.Shop;
 public class Offer{
-	
 	private String name;
 	private double price;
-	private String deadLine;
+	private LocalDateTime deadLine;
 	private User user;
 	private String date;
 	private String description;
 	private String location;
 	private ICategory category;
-	
-	public Offer(String name, double price, String deadLine,String description,String location, ICategory category) {
+	public Offer(String name, double price,String description,String location) {
 		if(name!=null && !(name.isEmpty())){
 			this.name = name;
 		}
 		if(price>0){
 			this.price = price;
 		}
-		this.deadLine = deadLine;
 		if(description!=null && !(description.isEmpty())){
 			this.description = description;
 		}
+		this.deadLine = LocalDateTime.now().plusMonths(1);
 		this.location = location;
-		this.category = category;
 		Shop.allOffers.add(this);
 		
 	}
@@ -40,10 +40,6 @@ public class Offer{
 
 	public double getPrice() {
 		return price;
-	}
-
-	public String getDeadLine() {
-		return deadLine;
 	}
 
 	public User getUser() {
@@ -69,5 +65,13 @@ public class Offer{
 	public void setName(String newName) {
 		this.name = newName;
 		
+	}
+	
+	public void setCategory(ICategory category) {
+		this.category = category;
+	}
+	
+	public String getDeadLine() {
+		return "Deadline: " + deadLine.getDayOfMonth() + "-" + deadLine.getMonthValue()+ "-" + deadLine.getYear();
 	}
 }

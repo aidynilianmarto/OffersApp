@@ -6,61 +6,103 @@ import Offer.Offer;
 
 public abstract class Cloth extends Fashion{
 	
-	private ArrayList<Offer> offers;
+	private static ArrayList<Offer> clothOffers;
+	
+	public Cloth() {
+		super();
+		clothOffers = new ArrayList<>();
+	}
+	
+	@Override
+	public void deleteOffer(Offer o) {
+		super.deleteOffer(o);
+		clothOffers.remove(o);
+	}
+	
+	public static void showAccessoryList(){
+		if(clothOffers.size()==0){
+			System.out.println("No offers in this category!");
+		}
+		for (int i = 0; i < clothOffers.size(); i++) {
+			System.out.println("Name: " + clothOffers.get(i).getName());
+			System.out.println("User: " + clothOffers.get(i).getUser().getName());
+			System.out.println("Category: Accessorry");
+			System.out.println("Description: " + clothOffers.get(i).getDescription());
+			System.out.println("Price: " + clothOffers.get(i).getPrice());
+		}
+	}
 	
 	@Override
 	protected void addToList(Offer offer){
-		if(offer.getCategory() instanceof Cloth){
-			offers.add(offer);
-		}
+		clothOffers.add(offer);
 	}
 	
-	
-
-	public static class ManCloth extends Cloth{
+	public static class MenCloth extends Cloth{
 		
-		private  static ArrayList<Offer> offers;
+		private  static ArrayList<Offer> menClothOffers;
 		public static final String NAME = "Man clothes";
-
+		static MenCloth instance = new MenCloth();
 		
-		public ManCloth(){}
+		protected MenCloth(){
+			super();
+			menClothOffers = new ArrayList<>();
+		}
 
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
-			if(offer.getCategory() instanceof ManCloth){
-				offers.add(offer);
-			}
+			menClothOffers.add(offer);
 		}
 		
 		@Override
-		public void getListOfOffers() {
-			System.out.println(offers);
+		public ArrayList<Offer> getListOfOffers() {
+			return menClothOffers;
+		}
+
+		public static MenCloth getInstance() {
+			return instance;
+		}
+		
+
+		@Override
+		public String getCategoryName() {
+			return NAME;
 		}
 		
 		
 	}
 	
-	public static class WemenCloth extends Cloth{
+	public static class WomenCloth extends Cloth{
 		
-		private static ArrayList<Offer> offers;
-		public static final String NAME = "Wemen clothes";
-
+		private static ArrayList<Offer> womenClothOffers;
+		public static final String NAME = "Women clothes";
+		static WomenCloth instance = new WomenCloth();
 		
-		public WemenCloth(){}
+		private WomenCloth(){
+			super();
+			womenClothOffers = new ArrayList<>();
+		}
 
 		@Override
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
-			if(offer.getCategory() instanceof WemenCloth){
-				offers.add(offer);
-			}
-	
+			womenClothOffers.add(offer);
+			
 		}
 		
 		@Override
-		public void getListOfOffers() {
-			System.out.println(offers);
+		public ArrayList<Offer> getListOfOffers() {
+			return womenClothOffers;
+		}
+
+		public static WomenCloth getInstance() {
+			return instance;
+		}
+		
+
+		@Override
+		public String getCategoryName() {
+			return NAME;
 		}
 
 		

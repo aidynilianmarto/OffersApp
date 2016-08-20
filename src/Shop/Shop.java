@@ -3,6 +3,7 @@ package Shop;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+
 import Offer.Offer;
 import Offer.ICategory;
 import User.User;
@@ -48,6 +49,24 @@ public class Shop {
 	public static void showAllOfers(){
 		for (User u : userAndOffer.keySet()  ) {
 			u.showMyOffer();
+		}
+	}
+	
+	public static void showOffersByCategory(ICategory c){
+		for (ICategory cat : offersByCategory.keySet()) {
+			if(c.equals(cat)){
+				int i = 0;
+				for (Offer o : offersByCategory.get(c)) {
+					System.out.println("-----Offer " + (++i) + "-----" );
+					System.out.println("Name: " + o.getName() );
+					System.out.println("Category: " + o.getCategory().getCategoryName() );
+					System.out.println("User: " + o.getUser().getName());
+					System.out.println("Description: " + o.getDescription() );
+					System.out.println("Price: " + o.getPrice() );
+					System.out.println("Location: " + o.getLocation() );
+					System.out.println("Dead Line: " + o.getDeadLine() );
+				}
+			}
 		}
 	}
 }
