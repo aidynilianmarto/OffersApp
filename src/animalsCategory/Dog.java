@@ -68,7 +68,7 @@ private static ArrayList<Offer> dogOffers;
 			return NAME;
 		}
 		
-		public Homeless getInstance() {
+		public static Homeless getInstance() {
 			return instance;
 		}
 	}
@@ -104,7 +104,7 @@ private static ArrayList<Offer> dogOffers;
 			return NAME;
 		}
 		
-		public HouseDog getInstance() {
+		public static HouseDog getInstance() {
 			return instance;
 		}
 	}

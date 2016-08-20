@@ -74,4 +74,16 @@ public class Offer{
 	public String getDeadLine() {
 		return "Deadline: " + deadLine.getDayOfMonth() + "-" + deadLine.getMonthValue()+ "-" + deadLine.getYear();
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder("");
+		sb.append("Offer name: " + this.name + "\n");
+		sb.append("Username: " + this.user.getName() + "\n");
+		sb.append("Description: " + this.description + "\n");
+		sb.append("Price: " + this.price + "\n");
+		
+		return sb.toString();
+		
+	}
 }

@@ -42,7 +42,7 @@ public abstract class Shoe extends Fashion{
 		
 		public static ArrayList<Offer> menShoesOffers;
 		public static final String NAME = "Men shoes";
-		static MenShoes instance = new MenShoes();
+		private static MenShoes instance = new MenShoes();
 		
 		private MenShoes(){
 			super();
@@ -53,6 +53,12 @@ public abstract class Shoe extends Fashion{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			menShoesOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			menShoesOffers.remove(o);
 		}
 
 		@Override
@@ -75,7 +81,7 @@ public abstract class Shoe extends Fashion{
 		
 		private static ArrayList<Offer> womenShoesOffers;
 		public static final String NAME = "Women shoes";
-		static WomenShoes instance = new WomenShoes();
+		private static WomenShoes instance = new WomenShoes();
 		
 		private WomenShoes(){
 			super();
@@ -87,6 +93,13 @@ public abstract class Shoe extends Fashion{
 			super.addToList(offer);
 			womenShoesOffers.add(offer);
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			womenShoesOffers.remove(o);
+		}
+
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {

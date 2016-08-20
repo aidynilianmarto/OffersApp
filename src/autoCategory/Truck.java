@@ -42,7 +42,7 @@ public abstract class Truck extends Automobile{
 		
 		private static ArrayList<Offer> selfUnloadingOffers;
 		private static final String NAME = "Selfunloading trucks";
-		private SelfUnloading instance = new SelfUnloading();
+		private static SelfUnloading instance = new SelfUnloading();
 		
 		private SelfUnloading(){
 			super();
@@ -55,6 +55,12 @@ public abstract class Truck extends Automobile{
 			selfUnloadingOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			selfUnloadingOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -66,7 +72,7 @@ public abstract class Truck extends Automobile{
 			return NAME;
 		}
 		
-		public SelfUnloading getInstance(){
+		public static SelfUnloading getInstance(){
 			return instance;
 		}
 		
@@ -76,7 +82,7 @@ public abstract class Truck extends Automobile{
 		
 		private static ArrayList<Offer> heavyLoadOffers;
 		private static final String NAME = "Heavy load trucks";
-		private HeavyLoad instance = new HeavyLoad();
+		private static HeavyLoad instance = new HeavyLoad();
 		
 		private HeavyLoad(){
 			super();
@@ -89,6 +95,12 @@ public abstract class Truck extends Automobile{
 			heavyLoadOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			heavyLoadOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -100,7 +112,7 @@ public abstract class Truck extends Automobile{
 			return NAME;
 		}
 		
-		public HeavyLoad getInstance(){
+		public static HeavyLoad getInstance(){
 			return instance;
 		}
 		

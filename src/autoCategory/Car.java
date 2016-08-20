@@ -42,7 +42,7 @@ public abstract class Car extends Automobile{
 		
 		private static ArrayList<Offer> hatchbackOffers;
 		private static final String NAME = "Hatchback cars";
-		private Hatchback instance = new Hatchback();
+		private static Hatchback instance = new Hatchback();
 		
 		private Hatchback(){
 			super();
@@ -55,6 +55,12 @@ public abstract class Car extends Automobile{
 			hatchbackOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			hatchbackOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -66,7 +72,7 @@ public abstract class Car extends Automobile{
 			return NAME;
 		}
 		
-		public Hatchback getInstance(){
+		public static Hatchback getInstance(){
 			return instance;
 		}
 		
@@ -76,7 +82,7 @@ public abstract class Car extends Automobile{
 		
 		private static ArrayList<Offer> sedanOffers;
 		private static final String NAME = "Sedan cars";
-		private Sedan instance = new Sedan();
+		private static Sedan instance = new Sedan();
 		
 		private Sedan(){
 			super();
@@ -89,6 +95,12 @@ public abstract class Car extends Automobile{
 			sedanOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			sedanOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -100,7 +112,7 @@ public abstract class Car extends Automobile{
 			return NAME;
 		}
 		
-		public Sedan getInstance(){
+		public static Sedan getInstance(){
 			return instance;
 		}
 		
@@ -110,7 +122,7 @@ public abstract class Car extends Automobile{
 		
 		private static ArrayList<Offer> combiOffers;
 		private static final String NAME = "Combi cars";
-		private Combi instance = new Combi();
+		private static Combi instance = new Combi();
 		
 		private Combi(){
 			super();
@@ -123,6 +135,12 @@ public abstract class Car extends Automobile{
 			combiOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			combiOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -134,7 +152,7 @@ public abstract class Car extends Automobile{
 			return NAME;
 		}
 		
-		public Combi getInstance(){
+		public static Combi getInstance(){
 			return instance;
 		}
 		
@@ -144,7 +162,7 @@ public abstract class Car extends Automobile{
 		
 		private static ArrayList<Offer> sUVOffers;
 		private static final String NAME = "SUV cars";
-		private SUV instance = new SUV();
+		private static SUV instance = new SUV();
 		
 		private SUV(){
 			super();
@@ -157,6 +175,12 @@ public abstract class Car extends Automobile{
 			sUVOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			sUVOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -168,7 +192,7 @@ public abstract class Car extends Automobile{
 			return NAME;
 		}
 		
-		public SUV getInstance(){
+		public static SUV getInstance(){
 			return instance;
 		}
 		
@@ -178,7 +202,7 @@ public abstract class Car extends Automobile{
 		
 		private static ArrayList<Offer> cabrioOffers;
 		private static final String NAME = "Cabrio cars";
-		private Cabrio instance = new Cabrio();
+		private static Cabrio instance = new Cabrio();
 		
 		private Cabrio(){
 			super();
@@ -191,6 +215,12 @@ public abstract class Car extends Automobile{
 			cabrioOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			cabrioOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -202,7 +232,7 @@ public abstract class Car extends Automobile{
 			return NAME;
 		}
 		
-		public Cabrio getInstance(){
+		public static Cabrio getInstance(){
 			return instance;
 		}
 		

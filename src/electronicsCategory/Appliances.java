@@ -42,7 +42,7 @@ public static class Stove extends Appliances{
 		
 		private static ArrayList<Offer> stoveOffers;
 		public static final String NAME = "Stoves";
-		Stove instance = new Stove();
+		private static Stove instance = new Stove();
 		public Stove(){
 			super();
 			stoveOffers = new ArrayList<>();
@@ -52,6 +52,12 @@ public static class Stove extends Appliances{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			stoveOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			stoveOffers.remove(o);
 		}
 
 		@Override
@@ -64,7 +70,7 @@ public static class Stove extends Appliances{
 			return NAME;
 		}
 		
-		public Stove getInstance() {
+		public static Stove getInstance() {
 			return instance;
 		}
 		
@@ -74,7 +80,7 @@ public static class Stove extends Appliances{
 			
 		private static ArrayList<Offer> refrigiratorOffers;
 		public static final String NAME = "Refrigirators";
-		Refrigirator instance = new Refrigirator();
+		private static Refrigirator instance = new Refrigirator();
 		public Refrigirator(){
 			super();
 			refrigiratorOffers = new ArrayList<>();
@@ -86,6 +92,13 @@ public static class Stove extends Appliances{
 			refrigiratorOffers.add(offer);
 
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			refrigiratorOffers.remove(o);
+		}
+
 	
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -97,7 +110,7 @@ public static class Stove extends Appliances{
 			return NAME;
 		}
 		
-		public Refrigirator getInstance() {
+		public static Refrigirator getInstance() {
 			return instance;
 		}
 			
@@ -107,7 +120,7 @@ public static class Stove extends Appliances{
 		
 		private static ArrayList<Offer> washerOffers;
 		public static final String NAME = "Washers";
-		Washer instance = new Washer();
+		private static Washer instance = new Washer();
 		public Washer(){
 			super();
 			washerOffers = new ArrayList<>();
@@ -117,6 +130,12 @@ public static class Stove extends Appliances{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			washerOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			washerOffers.remove(o);
 		}
 	
 		@Override
@@ -129,13 +148,17 @@ public static class Stove extends Appliances{
 			return NAME;
 		}
 		
+		public static Washer getInstance() {
+			return instance;
+		}
+		
 	}
 	
 	public static class DishWasher extends Appliances{
 			
 		private static ArrayList<Offer> dishWasherOffers;
 		public static final String NAME = "Dish washers";
-		DishWasher instance = new DishWasher();
+		private static DishWasher instance = new DishWasher();
 		public DishWasher(){
 			super();
 			dishWasherOffers = new ArrayList<>();
@@ -145,6 +168,12 @@ public static class Stove extends Appliances{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			dishWasherOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			dishWasherOffers.remove(o);
 		}
 
 		@Override
@@ -157,7 +186,7 @@ public static class Stove extends Appliances{
 			return NAME;
 		}
 		
-		public DishWasher getInstance() {
+		public static DishWasher getInstance() {
 			return instance;
 		}
 			
@@ -167,7 +196,7 @@ public static class Stove extends Appliances{
 		
 		private static ArrayList<Offer> airConditionerOffers;
 		public static final String NAME = "Air conditioners";
-		AirConditioner instance = new AirConditioner();
+		private static AirConditioner instance = new AirConditioner();
 		public AirConditioner(){
 			super();
 			airConditionerOffers = new ArrayList<>();
@@ -177,6 +206,12 @@ public static class Stove extends Appliances{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			airConditionerOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			airConditionerOffers.remove(o);
 		}
 
 		@Override
@@ -189,7 +224,7 @@ public static class Stove extends Appliances{
 			return NAME;
 		}
 		
-		public AirConditioner getInstance() {
+		public static AirConditioner getInstance() {
 			return instance;
 		}
 			

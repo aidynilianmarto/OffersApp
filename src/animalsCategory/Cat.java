@@ -63,7 +63,7 @@ public abstract class Cat extends Animal {
 			return NAME;
 		}
 
-		public Homeless getInstance() {
+		public static Homeless getInstance() {
 			return instance;
 		}
 	}
@@ -100,7 +100,7 @@ public abstract class Cat extends Animal {
 			return NAME;
 		}
 
-		public HouseCat getInstance() {
+		public static HouseCat getInstance() {
 			return instance;
 		}
 

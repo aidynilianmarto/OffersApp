@@ -38,7 +38,7 @@ public abstract class Automobile implements ICategory{
 		
 		private static ArrayList<Offer> accessoriesOffers;
 		private static final String NAME = "Car accessories";
-		private CarAccessories instance = new CarAccessories();
+		private static CarAccessories instance = new CarAccessories();
 		
 		private CarAccessories(){
 			accessoriesOffers = new ArrayList<Offer>();
@@ -48,6 +48,12 @@ public abstract class Automobile implements ICategory{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			accessoriesOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			accessoriesOffers.remove(o);
 		}
 
 		@Override
@@ -60,7 +66,7 @@ public abstract class Automobile implements ICategory{
 			return NAME;
 		}
 		
-		public CarAccessories getInstance(){
+		public static CarAccessories getInstance(){
 			return instance;
 		}
 
@@ -70,7 +76,7 @@ public abstract class Automobile implements ICategory{
 		
 		private static ArrayList<Offer> carPartsOffers;
 		private static final String NAME = "Car parts";
-		private CarPart instance = new CarPart();
+		private static CarPart instance = new CarPart();
 		
 		private CarPart(){
 			carPartsOffers = new ArrayList<Offer>();
@@ -80,6 +86,12 @@ public abstract class Automobile implements ICategory{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			carPartsOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			carPartsOffers.remove(o);
 		}
 
 		@Override
@@ -92,7 +104,7 @@ public abstract class Automobile implements ICategory{
 			return NAME;
 		}
 		
-		public CarPart getInstance(){
+		public static CarPart getInstance(){
 			return instance;
 		}
 

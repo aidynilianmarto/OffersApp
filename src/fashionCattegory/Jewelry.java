@@ -2,7 +2,6 @@ package fashionCattegory;
 
 import java.util.ArrayList;
 
-import Offer.ICategory;
 import Offer.Offer;
 
 public abstract class Jewelry extends Fashion{
@@ -44,7 +43,7 @@ public abstract class Jewelry extends Fashion{
 		
 		private static ArrayList<Offer> braceletOffers;
 		public static final String NAME = "Bracelets";
-		Bracelet instance = new Bracelet();
+		private static Bracelet instance = new Bracelet();
 		private Bracelet(){
 			super();
 			braceletOffers = new ArrayList<>();
@@ -58,11 +57,17 @@ public abstract class Jewelry extends Fashion{
 		}
 		
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			braceletOffers.remove(o);
+		}
+		
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return braceletOffers;
 		}
 
-		public ICategory getInstance() {
+		public static Bracelet getInstance() {
 			return instance;
 		}
 		
@@ -77,7 +82,7 @@ public abstract class Jewelry extends Fashion{
 		
 		private static ArrayList<Offer> earingOffers;
 		public static final String NAME = "Earings";
-		static Earing instance = new Earing();
+		private static Earing instance = new Earing();
 		private Earing(){
 			super();
 			earingOffers = new ArrayList<>();
@@ -88,6 +93,12 @@ public abstract class Jewelry extends Fashion{
 			super.addToList(offer);
 			earingOffers.add(offer);
 			
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			earingOffers.remove(o);
 		}
 		
 		@Override
@@ -109,7 +120,7 @@ public abstract class Jewelry extends Fashion{
 	
 		private static ArrayList<Offer> necklaceOffers;
 		public static final String NAME = "Necklaces";
-		static Necklace instance = new Necklace();
+		private static Necklace instance = new Necklace();
 		private Necklace(){
 			super();
 			necklaceOffers = new ArrayList<>();
@@ -120,6 +131,12 @@ public abstract class Jewelry extends Fashion{
 			super.addToList(offer);
 			necklaceOffers.add(offer);
 			
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			necklaceOffers.remove(o);
 		}
 		
 		@Override
@@ -142,7 +159,7 @@ public abstract class Jewelry extends Fashion{
 		
 		private static ArrayList<Offer> ringOffers;
 		public static final String NAME = "Rings";
-		static Ring instance = new Ring();
+		private static Ring instance = new Ring();
 		
 		private Ring(){
 			super();
@@ -153,6 +170,12 @@ public abstract class Jewelry extends Fashion{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			ringOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			ringOffers.remove(o);
 		}
 		
 		@Override

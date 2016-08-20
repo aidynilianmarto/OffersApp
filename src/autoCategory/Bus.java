@@ -42,7 +42,7 @@ public abstract class Bus extends Automobile{
 		
 		private static ArrayList<Offer> microBusOffers;
 		private static final String NAME = "Microbus vehicles";
-		private MicroBus instance = new MicroBus();
+		private static MicroBus instance = new MicroBus();
 		
 		private MicroBus(){
 			super();
@@ -55,6 +55,12 @@ public abstract class Bus extends Automobile{
 			microBusOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			microBusOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -66,7 +72,7 @@ public abstract class Bus extends Automobile{
 			return NAME;
 		}
 		
-		public MicroBus getInstance(){
+		public static MicroBus getInstance(){
 			return instance;
 		}
 		

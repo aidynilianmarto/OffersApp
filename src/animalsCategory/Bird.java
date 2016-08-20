@@ -68,7 +68,7 @@ private static ArrayList<Offer> birdOffers;
 			return NAME;
 		}
 		
-		public Parrot getInstance() {
+		public static Parrot getInstance() {
 			return instance;
 		}
 	}
@@ -104,7 +104,7 @@ private static ArrayList<Offer> birdOffers;
 			return NAME;
 		}
 		
-		public Other getInstance() {
+		public static Other getInstance() {
 			return instance;
 		}
 	}

@@ -42,7 +42,7 @@ public abstract class Bike extends Automobile{
 		
 		private static ArrayList<Offer> lowCubageOffers;
 		private static final String NAME = "Low cubage bikes";
-		private LowCubage instance = new LowCubage();
+		private static LowCubage instance = new LowCubage();
 		
 		private LowCubage(){
 			super();
@@ -55,6 +55,12 @@ public abstract class Bike extends Automobile{
 			lowCubageOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			lowCubageOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -66,7 +72,7 @@ public abstract class Bike extends Automobile{
 			return NAME;
 		}
 		
-		public LowCubage getInstance(){
+		public static LowCubage getInstance(){
 			return instance;
 		}
 		
@@ -76,7 +82,7 @@ public abstract class Bike extends Automobile{
 		
 		private static ArrayList<Offer> midCubageOffers;
 		private static final String NAME = "Mid cubage bikes";
-		private MidCubage instance = new MidCubage();
+		private static MidCubage instance = new MidCubage();
 		
 		private MidCubage(){
 			super();
@@ -89,6 +95,12 @@ public abstract class Bike extends Automobile{
 			midCubageOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			midCubageOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -100,7 +112,7 @@ public abstract class Bike extends Automobile{
 			return NAME;
 		}
 		
-		public MidCubage getInstance(){
+		public static MidCubage getInstance(){
 			return instance;
 		}
 		
@@ -110,7 +122,7 @@ public abstract class Bike extends Automobile{
 		
 		private static ArrayList<Offer> highCubageOffers;
 		private static final String NAME = "High cubage bikes";
-		private HighCubage instance = new HighCubage();
+		private static HighCubage instance = new HighCubage();
 		
 		private HighCubage(){
 			super();
@@ -123,6 +135,12 @@ public abstract class Bike extends Automobile{
 			highCubageOffers.add(offer);
 			
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			highCubageOffers.remove(o);
+		}
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -134,7 +152,7 @@ public abstract class Bike extends Automobile{
 			return NAME;
 		}
 		
-		public HighCubage getInstance(){
+		public static HighCubage getInstance(){
 			return instance;
 		}
 		

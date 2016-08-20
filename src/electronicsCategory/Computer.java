@@ -41,7 +41,7 @@ public abstract class Computer extends Electronics{
 		
 		private static ArrayList<Offer> laptopOffers;
 		public static final String NAME = "Laptop";
-		Laptop instance = new Laptop();
+		private static Laptop instance = new Laptop();
 		public Laptop(){
 			super();
 			laptopOffers = new ArrayList<>();
@@ -51,6 +51,12 @@ public abstract class Computer extends Electronics{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			laptopOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			laptopOffers.remove(o);
 		}
 		
 		@Override
@@ -64,7 +70,7 @@ public abstract class Computer extends Electronics{
 			return NAME;
 		}
 		
-		public Laptop getInstance() {
+		public static Laptop getInstance() {
 			return instance;
 		}
 	}
@@ -73,7 +79,7 @@ public abstract class Computer extends Electronics{
 		
 		private static ArrayList<Offer> desktopOffers;
 		public static final String NAME = "Desktop";
-		Desktop instance = new Desktop();
+		private static Desktop instance = new Desktop();
 		public Desktop(){
 			super();
 			desktopOffers = new ArrayList<>();
@@ -86,6 +92,12 @@ public abstract class Computer extends Electronics{
 		}
 		
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			desktopOffers.remove(o);
+		}
+		
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return desktopOffers;
 		}
@@ -95,7 +107,7 @@ public abstract class Computer extends Electronics{
 			return NAME;
 		}
 		
-		public Desktop getInstance() {
+		public static Desktop getInstance() {
 			return instance;
 		}
 	}

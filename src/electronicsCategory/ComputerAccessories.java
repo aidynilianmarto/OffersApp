@@ -41,7 +41,7 @@ public abstract class ComputerAccessories extends Electronics{
 		
 		private static ArrayList<Offer> cableOffers;
 		public static final String NAME = "Cables";
-		Cable instance = new Cable();
+		private static Cable instance = new Cable();
 		public Cable(){
 			super();
 			cableOffers = new ArrayList<>();
@@ -52,6 +52,13 @@ public abstract class ComputerAccessories extends Electronics{
 			super.addToList(offer);
 			cableOffers.add(offer);
 		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			cableOffers.remove(o);
+		}
+		
 
 		@Override
 		public ArrayList<Offer> getListOfOffers() {
@@ -63,7 +70,7 @@ public abstract class ComputerAccessories extends Electronics{
 			return NAME;
 		}
 		
-		public Cable getInstance() {
+		public static Cable getInstance() {
 			return instance;
 		}
 		
@@ -75,7 +82,7 @@ public abstract class ComputerAccessories extends Electronics{
 			
 			private static ArrayList<Offer> mouseOffers;
 			public static final String NAME = "Mouse";
-			Mouse instance = new Mouse();
+			private static Mouse instance = new Mouse();
 			
 			public Mouse(){
 				super();
@@ -86,6 +93,12 @@ public abstract class ComputerAccessories extends Electronics{
 			public void addOffer(Offer offer) {
 				super.addToList(offer);
 				mouseOffers.add(offer);
+			}
+			
+			@Override
+			public void deleteOffer(Offer o) {
+				super.deleteOffer(o);
+				mouseOffers.remove(o);
 			}
 	
 			@Override
@@ -98,7 +111,7 @@ public abstract class ComputerAccessories extends Electronics{
 				return NAME;
 			}
 			
-			public Mouse getInstance() {
+			public static Mouse getInstance() {
 				return instance;
 			}
 		}
@@ -107,7 +120,7 @@ public abstract class ComputerAccessories extends Electronics{
 		
 		private static ArrayList<Offer> keyboardOffers;
 		public static final String NAME = "Keyboards";
-		Keyboard instance = new Keyboard();
+		private static Keyboard instance = new Keyboard();
 		public Keyboard(){
 			super();
 			keyboardOffers = new ArrayList<>();
@@ -117,6 +130,12 @@ public abstract class ComputerAccessories extends Electronics{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			keyboardOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			keyboardOffers.remove(o);
 		}
 	
 		@Override
@@ -129,7 +148,7 @@ public abstract class ComputerAccessories extends Electronics{
 			return NAME;
 		}
 		
-		public Keyboard getInstance() {
+		public static Keyboard getInstance() {
 			return instance;
 		}
 	}
@@ -139,7 +158,7 @@ public abstract class ComputerAccessories extends Electronics{
 		
 		private static ArrayList<Offer> otherOffers;
 		public static final String NAME = "Other";
-		Other instance = new Other();
+		private static Other instance = new Other();
 		public Other(){
 			super();
 			otherOffers = new ArrayList<>();
@@ -149,6 +168,12 @@ public abstract class ComputerAccessories extends Electronics{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			otherOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			otherOffers.remove(o);
 		}
 	
 		@Override
@@ -161,41 +186,9 @@ public abstract class ComputerAccessories extends Electronics{
 			return NAME;
 		}
 		
-		public Other getInstance() {
+		public static Other getInstance() {
 			return instance;
 		}
-	}
-	
-	public static class Camera extends ComputerAccessories{
-		
-		private static ArrayList<Offer> cameraOffers;
-		public static final String NAME = "Cameras";
-		Camera instance = new Camera();
-		public Camera(){
-			super();
-			cameraOffers = new ArrayList<>();
-		}
-	
-		@Override
-		public void addOffer(Offer offer) {
-			super.addToList(offer);
-			cameraOffers.add(offer);
-		}
-	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
-			return cameraOffers;
-		}
-		
-		@Override
-		public String getCategoryName() {
-			return NAME;
-		}
-		
-		public Camera getInstance() {
-			return instance;
-		}
-		
 	}
 
 }

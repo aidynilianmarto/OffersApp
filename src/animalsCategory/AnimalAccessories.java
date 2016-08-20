@@ -67,7 +67,7 @@ public abstract class AnimalAccessories extends Animal {
 			return NAME;
 		}
 
-		public Strap getInstance() {
+		public static Strap getInstance() {
 			return instance;
 		}
 
@@ -105,7 +105,7 @@ public abstract class AnimalAccessories extends Animal {
 			return NAME;
 		}
 
-		public Toy getInstance() {
+		public static Toy getInstance() {
 			return instance;
 		}
 	}
@@ -142,7 +142,7 @@ public abstract class AnimalAccessories extends Animal {
 			return NAME;
 		}
 
-		public Containment getInstance() {
+		public static Containment getInstance() {
 			return instance;
 		}
 	}
@@ -178,7 +178,7 @@ public abstract class AnimalAccessories extends Animal {
 			return NAME;
 		}
 
-		public Food getInstance() {
+		public static Food getInstance() {
 			return instance;
 		}
 	}
@@ -215,7 +215,7 @@ public abstract class AnimalAccessories extends Animal {
 			return NAME;
 		}
 
-		public Other getInstance() {
+		public static Other getInstance() {
 			return instance;
 		}
 

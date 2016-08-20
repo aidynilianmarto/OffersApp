@@ -40,7 +40,7 @@ public abstract class SmartDevices extends Electronics{
 		
 		private static ArrayList<Offer> phoneOffers;
 		public static final String NAME = "Phones";
-		Phone instance = new Phone();
+		private static Phone instance = new Phone();
 		public Phone(){
 			super();
 			phoneOffers = new ArrayList<>();
@@ -50,6 +50,12 @@ public abstract class SmartDevices extends Electronics{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			phoneOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			phoneOffers.remove(o);
 		}
 
 		@Override
@@ -62,7 +68,7 @@ public abstract class SmartDevices extends Electronics{
 			return NAME;
 		}
 		
-		public Phone getInstance() {
+		public static Phone getInstance() {
 			return instance;
 		}
 		
@@ -72,7 +78,7 @@ public abstract class SmartDevices extends Electronics{
 			
 		private static ArrayList<Offer> tabletOffers;
 		public static final String NAME = "Tablets";
-		Tablet instance = new Tablet();
+		private static Tablet instance = new Tablet();
 		public Tablet(){
 			super();
 			tabletOffers = new ArrayList<>();
@@ -82,6 +88,12 @@ public abstract class SmartDevices extends Electronics{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			tabletOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			tabletOffers.remove(o);
 		}
 	
 		@Override
@@ -94,7 +106,7 @@ public abstract class SmartDevices extends Electronics{
 			return NAME;
 		}
 		
-		public Tablet getInstance() {
+		public static Tablet getInstance() {
 			return instance;
 		}
 			
@@ -104,7 +116,7 @@ public abstract class SmartDevices extends Electronics{
 		
 		private static ArrayList<Offer> readerOffers;
 		public static final String NAME = "Readers";
-		Reader instance = new Reader();
+		private static Reader instance = new Reader();
 		public Reader(){
 			super();
 			readerOffers = new ArrayList<>();
@@ -114,6 +126,12 @@ public abstract class SmartDevices extends Electronics{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			readerOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			readerOffers.remove(o);
 		}
 	
 		@Override
@@ -126,7 +144,7 @@ public abstract class SmartDevices extends Electronics{
 			return NAME;
 		}
 		
-		public Reader getInstance() {
+		public static Reader getInstance() {
 			return instance;
 		}
 		
@@ -136,7 +154,7 @@ public abstract class SmartDevices extends Electronics{
 			
 		private static ArrayList<Offer> tvOffers;
 		public static final String NAME = "TVs";
-		TV instance = new TV();
+		private static TV instance = new TV();
 		public TV(){
 			super();
 			tvOffers = new ArrayList<>();
@@ -146,6 +164,12 @@ public abstract class SmartDevices extends Electronics{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			tvOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			tvOffers.remove(o);
 		}
 	
 		@Override
@@ -158,7 +182,7 @@ public abstract class SmartDevices extends Electronics{
 			return NAME;
 		}
 		
-		public TV getInstance() {
+		public static TV getInstance() {
 			return instance;
 		}
 			
@@ -168,7 +192,7 @@ public abstract class SmartDevices extends Electronics{
 		
 		private static ArrayList<Offer> cameraOffers;
 		public static final String NAME = "Cameras";
-		Camera instance = new Camera();
+		private static Camera instance = new Camera();
 		public Camera(){
 			super();
 			cameraOffers = new ArrayList<>();
@@ -178,6 +202,12 @@ public abstract class SmartDevices extends Electronics{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			cameraOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			cameraOffers.remove(o);
 		}
 	
 		@Override
@@ -190,7 +220,7 @@ public abstract class SmartDevices extends Electronics{
 			return NAME;
 		}
 		
-		public Camera getInstance() {
+		public static Camera getInstance() {
 			return instance;
 		}
 			
@@ -200,7 +230,7 @@ public abstract class SmartDevices extends Electronics{
 		
 		private static ArrayList<Offer> navigationOffers;
 		public static final String NAME = "Navigation";
-		Navigation instance = new Navigation();
+		private static Navigation instance = new Navigation();
 		public Navigation(){
 			super();
 			navigationOffers = new ArrayList<>();
@@ -210,6 +240,12 @@ public abstract class SmartDevices extends Electronics{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			navigationOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			navigationOffers.remove(o);
 		}
 	
 		@Override
@@ -222,7 +258,7 @@ public abstract class SmartDevices extends Electronics{
 			return NAME;
 		}
 		
-		public Navigation getInstance() {
+		public static Navigation getInstance() {
 			return instance;
 		}
 			

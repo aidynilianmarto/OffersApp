@@ -43,7 +43,7 @@ public abstract class Accessory extends Fashion{
 		
 		private static ArrayList<Offer> bagOffers;
 		public static final String NAME = "Bags";
-		static Bag instance = new Bag();
+		private static Bag instance = new Bag();
 		protected Bag(){
 			super();
 			bagOffers = new ArrayList<>();
@@ -54,6 +54,12 @@ public abstract class Accessory extends Fashion{
 			super.addToList(offer);
 			bagOffers.add(offer);
 			
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			bagOffers.remove(o);
 		}
 
 		@Override
@@ -77,7 +83,7 @@ public abstract class Accessory extends Fashion{
 		
 		private static ArrayList<Offer> tieOffers;
 		public static final String NAME = "Ties";
-		static Tie instance = new Tie();
+		private static Tie instance = new Tie();
 		protected Tie(){
 			super();
 			tieOffers = new ArrayList<>();
@@ -88,6 +94,12 @@ public abstract class Accessory extends Fashion{
 			super.addToList(offer);
 			tieOffers.add(offer);
 			
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			tieOffers.remove(o);
 		}
 
 		@Override
@@ -111,7 +123,7 @@ public abstract class Accessory extends Fashion{
 		
 		private static ArrayList<Offer> hatOffers;
 		public static final String NAME = "Hats";
-		static Hat instance = new Hat();
+		private static Hat instance = new Hat();
 		private Hat(){
 			super();
 			hatOffers = new ArrayList<>();
@@ -122,6 +134,12 @@ public abstract class Accessory extends Fashion{
 			super.addToList(offer);
 			hatOffers.add(offer);
 			
+		}
+
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			hatOffers.remove(o);
 		}
 		
 		@Override
@@ -145,7 +163,7 @@ public abstract class Accessory extends Fashion{
 		
 		private static ArrayList<Offer> glassesOffers;
 		public static final String NAME = "Glasses";
-		static Glasses instance = new Glasses();
+		private static Glasses instance = new Glasses();
 		private Glasses(){
 			super();
 			glassesOffers = new ArrayList<>();
@@ -155,6 +173,12 @@ public abstract class Accessory extends Fashion{
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			glassesOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			glassesOffers.remove(o);
 		}
 		
 		@Override

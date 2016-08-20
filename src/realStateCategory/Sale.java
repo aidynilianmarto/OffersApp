@@ -36,13 +36,13 @@ public abstract class Sale extends RealState {
 		saleOffers.add(offer);
 	}
 
-	public static class Àpartment extends Sale {
+	public static class ï¿½partment extends Sale {
 
 		private static ArrayList<Offer> apartmentsOffers;
 		public static final String NAME = "Apartments";
-		static Àpartment instance = new Àpartment();
+		private static ï¿½partment instance = new ï¿½partment();
 
-		protected Àpartment() {
+		protected ï¿½partment() {
 			apartmentsOffers = new ArrayList<>();
 		}
 
@@ -69,7 +69,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public Àpartment getInstance() {
+		public static ï¿½partment getInstance() {
 			return instance;
 		}
 	}
@@ -78,7 +78,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> houseOffers;
 		public static final String NAME = "Houses";
-		static House instance = new House();
+		private static House instance = new House();
 
 		protected House() {
 			houseOffers = new ArrayList<>();
@@ -107,7 +107,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public House getInstance() {
+		public static House getInstance() {
 			return instance;
 		}
 	}
@@ -116,7 +116,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> houseFloorOffers;
 		public static final String NAME = "House floor";
-		static HouseFloor instance = new HouseFloor();
+		private static HouseFloor instance = new HouseFloor();
 
 		protected HouseFloor() {
 			houseFloorOffers = new ArrayList<>();
@@ -145,7 +145,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public HouseFloor getInstance() {
+		public static HouseFloor getInstance() {
 			return instance;
 		}
 	}
@@ -154,7 +154,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> shopOffers;
 		public static final String NAME = "Shops";
-		static Shop instance = new Shop();
+		private static Shop instance = new Shop();
 
 		protected Shop() {
 			shopOffers = new ArrayList<>();
@@ -183,7 +183,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public Shop getInstance() {
+		public static Shop getInstance() {
 			return instance;
 		}
 	}
@@ -192,7 +192,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> hotelOffers;
 		public static final String NAME = "Hotels";
-		static Hotel instance = new Hotel();
+		private static Hotel instance = new Hotel();
 
 		protected Hotel() {
 			hotelOffers = new ArrayList<>();
@@ -221,7 +221,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public Hotel getInstance() {
+		public static Hotel getInstance() {
 			return instance;
 		}
 	}
@@ -230,7 +230,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> restaurantOffers;
 		public static final String NAME = "Restaurants";
-		static Restaurant instance = new Restaurant();
+		private static Restaurant instance = new Restaurant();
 
 		protected Restaurant() {
 			restaurantOffers = new ArrayList<>();
@@ -259,7 +259,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public Restaurant getInstance() {
+		public static Restaurant getInstance() {
 			return instance;
 		}
 	}
@@ -268,7 +268,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> officeOffers;
 		public static final String NAME = "Offices";
-		static Office instance = new Office();
+		private static Office instance = new Office();
 
 		protected Office() {
 			officeOffers = new ArrayList<>();
@@ -297,7 +297,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public Office getInstance() {
+		public static Office getInstance() {
 			return instance;
 		}
 	}
@@ -306,7 +306,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> storeOffers;
 		public static final String NAME = "Stores";
-		static Store instance = new Store();
+		private static Store instance = new Store();
 
 		protected Store() {
 			storeOffers = new ArrayList<>();
@@ -335,7 +335,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public Store getInstance() {
+		public static Store getInstance() {
 			return instance;
 		}
 	}
@@ -344,7 +344,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> industrialBuildingOffers;
 		public static final String NAME = "Industrial Buildings";
-		static IndustrialBuilding instance = new IndustrialBuilding();
+		private static IndustrialBuilding instance = new IndustrialBuilding();
 
 		protected IndustrialBuilding() {
 			industrialBuildingOffers = new ArrayList<>();
@@ -373,7 +373,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public IndustrialBuilding getInstance() {
+		public static IndustrialBuilding getInstance() {
 			return instance;
 		}
 	}
@@ -382,7 +382,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> plotOffers;
 		public static final String NAME = "Plots";
-		static Plot instance = new Plot();
+		private static Plot instance = new Plot();
 
 		protected Plot() {
 			plotOffers = new ArrayList<>();
@@ -411,18 +411,18 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public Plot getInstance() {
+		public static Plot getInstance() {
 			return instance;
 		}
 	}
 
-	public static class ÀgriculturalLand extends Sale {
+	public static class ï¿½griculturalLand extends Sale {
 
 		private static ArrayList<Offer> agriculturalLandOffers;
-		public static final String NAME = "Àgricultural lands";
-		static ÀgriculturalLand instance = new ÀgriculturalLand();
+		public static final String NAME = "ï¿½gricultural lands";
+		private static ï¿½griculturalLand instance = new ï¿½griculturalLand();
 
-		protected ÀgriculturalLand() {
+		protected ï¿½griculturalLand() {
 			agriculturalLandOffers = new ArrayList<>();
 		}
 
@@ -449,7 +449,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public ÀgriculturalLand getInstance() {
+		public static ï¿½griculturalLand getInstance() {
 			return instance;
 		}
 	}
@@ -458,7 +458,7 @@ public abstract class Sale extends RealState {
 
 		private static ArrayList<Offer> garageOffers;
 		public static final String NAME = "Garages";
-		static Garage instance = new Garage();
+		private static Garage instance = new Garage();
 
 		protected Garage() {
 			garageOffers = new ArrayList<>();
@@ -487,7 +487,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public Garage getInstance() {
+		public static Garage getInstance() {
 			return instance;
 		}
 	}

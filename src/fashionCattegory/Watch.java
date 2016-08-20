@@ -42,7 +42,7 @@ public abstract class Watch extends Fashion{
 		
 		private static ArrayList<Offer> menWatchOffers;
 		public static final String NAME = "Man watches";
-		static MenWatch instance = new MenWatch();
+		private static MenWatch instance = new MenWatch();
 		
 		private MenWatch(){
 			super();
@@ -55,11 +55,17 @@ public abstract class Watch extends Fashion{
 		}
 		
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			menWatchOffers.remove(o);
+		}
+		
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return menWatchOffers;
 		}
 
-		public static Watch getInstance() {
+		public static MenWatch getInstance() {
 			return instance;
 		}
 
@@ -74,7 +80,7 @@ public abstract class Watch extends Fashion{
 		
 		private static ArrayList<Offer> womenWatchOffers;
 		public static final String NAME = "Women watches";
-		static WomenWatch instance = new WomenWatch();
+		private static WomenWatch instance = new WomenWatch();
 		
 		private WomenWatch(){
 			super();
@@ -84,6 +90,12 @@ public abstract class Watch extends Fashion{
 		@Override
 		public void addOffer(Offer offer) {
 			womenWatchOffers.add(offer);
+		}
+		
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			womenWatchOffers.remove(o);
 		}
 		
 		@Override

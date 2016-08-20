@@ -40,7 +40,7 @@ public abstract class Mate extends RealState {
 
 		private static ArrayList<Offer> houseMateOffers;
 		public static final String NAME = "House mates";
-		static HouseMate instance = new HouseMate();
+		private static HouseMate instance = new HouseMate();
 
 		protected HouseMate() {
 			houseMateOffers = new ArrayList<>();
@@ -69,7 +69,7 @@ public abstract class Mate extends RealState {
 			return NAME;
 		}
 
-		public HouseMate getInstance() {
+		public static HouseMate getInstance() {
 			return instance;
 		}
 	}
@@ -78,7 +78,7 @@ public abstract class Mate extends RealState {
 
 		private static ArrayList<Offer> flatMateOffers;
 		public static final String NAME = "Flat mates";
-		static FlatMate instance = new FlatMate();
+		private static FlatMate instance = new FlatMate();
 
 		protected FlatMate() {
 			flatMateOffers = new ArrayList<>();
@@ -107,7 +107,7 @@ public abstract class Mate extends RealState {
 			return NAME;
 		}
 
-		public FlatMate getInstance() {
+		public static FlatMate getInstance() {
 			return instance;
 		}
 	}

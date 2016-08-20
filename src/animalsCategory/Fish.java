@@ -68,7 +68,7 @@ public abstract class Fish extends Animal {
 			return NAME;
 		}
 
-		public AquariumFish getInstance() {
+		public static AquariumFish getInstance() {
 			return instance;
 		}
 	}
@@ -105,7 +105,7 @@ public abstract class Fish extends Animal {
 			return NAME;
 		}
 
-		public Other getInstance() {
+		public static Other getInstance() {
 			return instance;
 		}
 	}
