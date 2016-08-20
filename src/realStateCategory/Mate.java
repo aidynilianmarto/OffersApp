@@ -17,7 +17,7 @@ public abstract class Mate extends RealState {
 		mateOffers.remove(o);
 	}
 
-	public static void showRentList() {
+	public static void showMateList() {
 		if (mateOffers.size() == 0) {
 			System.out.println("No offers in this category!");
 			return;
@@ -53,6 +53,12 @@ public abstract class Mate extends RealState {
 		}
 
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			houseMateOffers.remove(o);
+		}
+
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return houseMateOffers;
 
@@ -82,6 +88,12 @@ public abstract class Mate extends RealState {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			flatMateOffers.add(offer);
+		}
+
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			flatMateOffers.remove(o);
 		}
 
 		@Override

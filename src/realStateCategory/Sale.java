@@ -53,6 +53,12 @@ public abstract class Sale extends RealState {
 		}
 
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			apartmentsOffers.remove(o);
+		}
+
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return apartmentsOffers;
 
@@ -82,6 +88,12 @@ public abstract class Sale extends RealState {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			houseOffers.add(offer);
+		}
+
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			houseOffers.remove(o);
 		}
 
 		@Override
@@ -123,6 +135,12 @@ public abstract class Sale extends RealState {
 		}
 
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			houseFloorOffers.remove(o);
+		}
+
+		@Override
 		public String getCategoryName() {
 			return NAME;
 		}
@@ -146,6 +164,12 @@ public abstract class Sale extends RealState {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			shopOffers.add(offer);
+		}
+
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			shopOffers.remove(o);
 		}
 
 		@Override
@@ -178,6 +202,12 @@ public abstract class Sale extends RealState {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			hotelOffers.add(offer);
+		}
+
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			hotelOffers.remove(o);
 		}
 
 		@Override
@@ -219,6 +249,12 @@ public abstract class Sale extends RealState {
 		}
 
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			restaurantOffers.remove(o);
+		}
+
+		@Override
 		public String getCategoryName() {
 			return NAME;
 		}
@@ -242,6 +278,12 @@ public abstract class Sale extends RealState {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			officeOffers.add(offer);
+		}
+
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			officeOffers.remove(o);
 		}
 
 		@Override
@@ -277,6 +319,12 @@ public abstract class Sale extends RealState {
 		}
 
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			storeOffers.remove(o);
+		}
+
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return storeOffers;
 
@@ -306,6 +354,12 @@ public abstract class Sale extends RealState {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			industrialBuildingOffers.add(offer);
+		}
+
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			industrialBuildingOffers.remove(o);
 		}
 
 		@Override
@@ -341,6 +395,12 @@ public abstract class Sale extends RealState {
 		}
 
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			plotOffers.remove(o);
+		}
+
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return plotOffers;
 
@@ -373,6 +433,12 @@ public abstract class Sale extends RealState {
 		}
 
 		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			agriculturalLandOffers.remove(o);
+		}
+
+		@Override
 		public ArrayList<Offer> getListOfOffers() {
 			return agriculturalLandOffers;
 
@@ -402,6 +468,12 @@ public abstract class Sale extends RealState {
 		public void addOffer(Offer offer) {
 			super.addToList(offer);
 			garageOffers.add(offer);
+		}
+
+		@Override
+		public void deleteOffer(Offer o) {
+			super.deleteOffer(o);
+			garageOffers.remove(o);
 		}
 
 		@Override
