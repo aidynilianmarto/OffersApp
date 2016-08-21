@@ -1,12 +1,9 @@
 package Shop;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
-import Offer.Offer;
-import Offer.ICategory;
-import User.User;
+import Offer.*;
+import User.*;
 
 public class Shop {
 	public static ArrayList<Offer> allOffers = new ArrayList<>();
