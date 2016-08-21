@@ -36,13 +36,13 @@ public abstract class Sale extends RealState {
 		saleOffers.add(offer);
 	}
 
-	public static class �partment extends Sale {
+	public static class Apartment extends Sale {
 
 		private static ArrayList<Offer> apartmentsOffers;
 		public static final String NAME = "Apartments";
-		private static �partment instance = new �partment();
+		private static Apartment instance = new Apartment();
 
-		protected �partment() {
+		protected Apartment() {
 			apartmentsOffers = new ArrayList<>();
 		}
 
@@ -69,7 +69,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public static �partment getInstance() {
+		public static Apartment getInstance() {
 			return instance;
 		}
 	}
@@ -416,13 +416,13 @@ public abstract class Sale extends RealState {
 		}
 	}
 
-	public static class �griculturalLand extends Sale {
+	public static class AgriculturalLand extends Sale {
 
 		private static ArrayList<Offer> agriculturalLandOffers;
 		public static final String NAME = "�gricultural lands";
-		private static �griculturalLand instance = new �griculturalLand();
+		private static AgriculturalLand instance = new AgriculturalLand();
 
-		protected �griculturalLand() {
+		protected AgriculturalLand() {
 			agriculturalLandOffers = new ArrayList<>();
 		}
 
@@ -449,7 +449,7 @@ public abstract class Sale extends RealState {
 			return NAME;
 		}
 
-		public static �griculturalLand getInstance() {
+		public static AgriculturalLand getInstance() {
 			return instance;
 		}
 	}
