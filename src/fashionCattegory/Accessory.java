@@ -23,12 +23,6 @@ public abstract class Accessory extends Fashion{
 		accessoryOffers.remove(o);
 	}
 	
-	public static void showAccessoryList(){
-		if(accessoryOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-	}
 	
 	@Override
 	protected void addToList(Offer offer){
