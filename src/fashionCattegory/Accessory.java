@@ -13,6 +13,10 @@ public abstract class Accessory extends Fashion{
 		accessoryOffers = new ArrayList<>();
 	}
 	
+	public static ArrayList<Offer> getAccessoryOffers() {
+		return accessoryOffers;
+	}
+	
 	@Override
 	public void deleteOffer(Offer o) {
 		super.deleteOffer(o);
@@ -23,13 +27,6 @@ public abstract class Accessory extends Fashion{
 		if(accessoryOffers.size()==0){
 			System.out.println("No offers in this category!");
 			return;
-		}
-		for (int i = 0; i < accessoryOffers.size(); i++) {
-			System.out.println("Name: " + accessoryOffers.get(i).getName());
-			System.out.println("User: " + accessoryOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + accessoryOffers.get(i).getDescription());
-			System.out.println("Price: " + accessoryOffers.get(i).getPrice());
 		}
 	}
 	
@@ -62,10 +59,6 @@ public abstract class Accessory extends Fashion{
 			bagOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
-			return bagOffers;
-		}
 
 		public static Bag getInstance() {
 			return instance;
@@ -75,6 +68,10 @@ public abstract class Accessory extends Fashion{
 		@Override
 		public String getCategoryName() {
 			return NAME;
+		}
+		
+		public static ArrayList<Offer> getBagOffers() {
+			return bagOffers;
 		}
 		
 	}
@@ -102,8 +99,7 @@ public abstract class Accessory extends Fashion{
 			tieOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return tieOffers;
 		}
 		
@@ -142,8 +138,7 @@ public abstract class Accessory extends Fashion{
 			hatOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return hatOffers;
 		}
 		
@@ -181,8 +176,7 @@ public abstract class Accessory extends Fashion{
 			glassesOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return glassesOffers;
 		}
 		
@@ -194,5 +188,7 @@ public abstract class Accessory extends Fashion{
 		public String getCategoryName() {
 			return NAME;
 		}
+		
+		
 	}
 }

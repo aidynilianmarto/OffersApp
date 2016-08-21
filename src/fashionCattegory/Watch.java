@@ -20,19 +20,6 @@ public abstract class Watch extends Fashion{
 		watchOffers.remove(o);
 	}
 	
-	public static void showAccessoryList(){
-		if(watchOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < watchOffers.size(); i++) {
-			System.out.println("Name: " + watchOffers.get(i).getName());
-			System.out.println("User: " + watchOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + watchOffers.get(i).getDescription());
-			System.out.println("Price: " + watchOffers.get(i).getPrice());
-		}
-	}
 	@Override
 	protected void addToList(Offer offer){
 		watchOffers.add(offer);
@@ -60,8 +47,7 @@ public abstract class Watch extends Fashion{
 			menWatchOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return menWatchOffers;
 		}
 
@@ -98,8 +84,7 @@ public abstract class Watch extends Fashion{
 			womenWatchOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return womenWatchOffers;
 		}
 

@@ -17,20 +17,6 @@ private static ArrayList<Offer> dogOffers;
 		dogOffers.remove(o);
 	}
 	
-	public static void showDogsList(){
-		if(dogOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < dogOffers.size(); i++) {
-			System.out.println("Name: " + dogOffers.get(i).getName());
-			System.out.println("User: " + dogOffers.get(i).getUser().getName());
-			System.out.println("Category: Dogs");
-			System.out.println("Description: " + dogOffers.get(i).getDescription());
-			System.out.println("Price: " + dogOffers.get(i).getPrice());
-		}
-	}
-	
 	@Override
 	protected void addToList(Offer offer){
 		dogOffers.add(offer);
@@ -57,8 +43,7 @@ private static ArrayList<Offer> dogOffers;
 			homelessOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return homelessOffers;
 			
 		}
@@ -94,8 +79,7 @@ private static ArrayList<Offer> dogOffers;
 			houseDogsOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return houseDogsOffers;
 		}
 

@@ -18,20 +18,6 @@ public abstract class Truck extends Automobile{
 		truckOffers.remove(o);
 	}
 	
-	public void showTruckList(){
-		if(truckOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < truckOffers.size(); i++) {
-			System.out.println("Name: " + truckOffers.get(i).getName());
-			System.out.println("User: " + truckOffers.get(i).getUser().getName());
-			System.out.println("Category: Buses");
-			System.out.println("Description: " + truckOffers.get(i).getDescription());
-			System.out.println("Price: " + truckOffers.get(i).getPrice());
-		}
-	}
-	
 	@Override
 	protected void addToList(Offer offer) {
 		super.addToList(offer);
@@ -62,8 +48,7 @@ public abstract class Truck extends Automobile{
 			selfUnloadingOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return selfUnloadingOffers;
 		}
 
@@ -102,8 +87,7 @@ public abstract class Truck extends Automobile{
 			heavyLoadOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return heavyLoadOffers;
 		}
 

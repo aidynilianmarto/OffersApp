@@ -24,13 +24,6 @@ public abstract class Cloth extends Fashion{
 			System.out.println("No offers in this category!");
 			return;
 		}
-		for (int i = 0; i < clothOffers.size(); i++) {
-			System.out.println("Name: " + clothOffers.get(i).getName());
-			System.out.println("User: " + clothOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + clothOffers.get(i).getDescription());
-			System.out.println("Price: " + clothOffers.get(i).getPrice());
-		}
 	}
 	
 	@Override
@@ -61,9 +54,7 @@ public abstract class Cloth extends Fashion{
 			menClothOffers.remove(o);
 		}
 	
-		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return menClothOffers;
 		}
 
@@ -104,8 +95,7 @@ public abstract class Cloth extends Fashion{
 			womenClothOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return womenClothOffers;
 		}
 

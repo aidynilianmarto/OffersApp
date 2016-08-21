@@ -17,19 +17,6 @@ public abstract class Automobile implements ICategory{
 	public void deleteOffer(Offer o) {
 		autoOffers.remove(o);
 	}
-	public static void showAutoOffer(){
-		if(autoOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < autoOffers.size(); i++) {
-			System.out.println("Name: " + autoOffers.get(i).getName());
-			System.out.println("User: " + autoOffers.get(i).getUser().getName());
-			System.out.println("Category: Automobiles");
-			System.out.println("Description: " + autoOffers.get(i).getDescription());
-			System.out.println("Price: " + autoOffers.get(i).getPrice());
-		}
-	}
 	protected void addToList(Offer offer){
 		autoOffers.add(offer);
 	}
@@ -56,8 +43,7 @@ public abstract class Automobile implements ICategory{
 			accessoriesOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return accessoriesOffers;
 		}
 
@@ -93,9 +79,8 @@ public abstract class Automobile implements ICategory{
 			super.deleteOffer(o);
 			carPartsOffers.remove(o);
 		}
-
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		
+		public static ArrayList<Offer> getListOfOffers() {
 			return carPartsOffers;
 		}
 

@@ -16,20 +16,6 @@ public abstract class AnimalAccessories extends Animal {
 		animalAccessoriesOffers.remove(o);
 	}
 
-	public static void showAccessoryList() {
-		if (animalAccessoriesOffers.size() == 0) {
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < animalAccessoriesOffers.size(); i++) {
-			System.out.println("Name: " + animalAccessoriesOffers.get(i).getName());
-			System.out.println("User: " + animalAccessoriesOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + animalAccessoriesOffers.get(i).getDescription());
-			System.out.println("Price: " + animalAccessoriesOffers.get(i).getPrice());
-		}
-	}
-
 	@Override
 	protected void addToList(Offer offer) {
 		animalAccessoriesOffers.add(offer);
@@ -57,8 +43,7 @@ public abstract class AnimalAccessories extends Animal {
 			strapOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return strapOffers;
 		}
 
@@ -95,8 +80,7 @@ public abstract class AnimalAccessories extends Animal {
 			toysOffers.add(offer);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return toysOffers;
 		}
 
@@ -132,8 +116,7 @@ public abstract class AnimalAccessories extends Animal {
 			containmentsOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return containmentsOffers;
 		}
 
@@ -168,8 +151,7 @@ public abstract class AnimalAccessories extends Animal {
 			foodsOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return foodsOffers;
 		}
 
@@ -205,8 +187,7 @@ public abstract class AnimalAccessories extends Animal {
 			otherOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return otherOffers;
 		}
 

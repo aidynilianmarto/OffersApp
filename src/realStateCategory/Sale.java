@@ -16,21 +16,6 @@ public abstract class Sale extends RealState {
 		super.deleteOffer(o);
 		saleOffers.remove(o);
 	}
-
-	public static void showSalesList() {
-		if (saleOffers.size() == 0) {
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < saleOffers.size(); i++) {
-			System.out.println("Name: " + saleOffers.get(i).getName());
-			System.out.println("User: " + saleOffers.get(i).getUser().getName());
-			System.out.println("Category: Sales");
-			System.out.println("Description: " + saleOffers.get(i).getDescription());
-			System.out.println("Price: " + saleOffers.get(i).getPrice());
-		}
-	}
-
 	@Override
 	protected void addToList(Offer offer) {
 		saleOffers.add(offer);
@@ -58,8 +43,7 @@ public abstract class Sale extends RealState {
 			apartmentsOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return apartmentsOffers;
 
 		}
@@ -96,8 +80,7 @@ public abstract class Sale extends RealState {
 			houseOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return houseOffers;
 
 		}
@@ -128,8 +111,7 @@ public abstract class Sale extends RealState {
 			houseFloorOffers.add(offer);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return houseFloorOffers;
 
 		}
@@ -172,8 +154,7 @@ public abstract class Sale extends RealState {
 			shopOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return shopOffers;
 
 		}
@@ -210,8 +191,7 @@ public abstract class Sale extends RealState {
 			hotelOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return hotelOffers;
 
 		}
@@ -242,8 +222,7 @@ public abstract class Sale extends RealState {
 			restaurantOffers.add(offer);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return restaurantOffers;
 
 		}
@@ -286,8 +265,7 @@ public abstract class Sale extends RealState {
 			officeOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return officeOffers;
 
 		}
@@ -323,9 +301,7 @@ public abstract class Sale extends RealState {
 			super.deleteOffer(o);
 			storeOffers.remove(o);
 		}
-
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return storeOffers;
 
 		}
@@ -361,9 +337,7 @@ public abstract class Sale extends RealState {
 			super.deleteOffer(o);
 			industrialBuildingOffers.remove(o);
 		}
-
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return industrialBuildingOffers;
 
 		}
@@ -399,9 +373,8 @@ public abstract class Sale extends RealState {
 			super.deleteOffer(o);
 			plotOffers.remove(o);
 		}
-
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		
+		public static ArrayList<Offer> getListOfOffers() {
 			return plotOffers;
 
 		}
@@ -419,7 +392,7 @@ public abstract class Sale extends RealState {
 	public static class AgriculturalLand extends Sale {
 
 		private static ArrayList<Offer> agriculturalLandOffers;
-		public static final String NAME = "�gricultural lands";
+		public static final String NAME = "Agricultural lands";
 		private static AgriculturalLand instance = new AgriculturalLand();
 
 		protected AgriculturalLand() {
@@ -438,8 +411,7 @@ public abstract class Sale extends RealState {
 			agriculturalLandOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return agriculturalLandOffers;
 
 		}
@@ -476,8 +448,7 @@ public abstract class Sale extends RealState {
 			garageOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return garageOffers;
 
 		}

@@ -18,20 +18,6 @@ public abstract class Bus extends Automobile{
 		busOffers.remove(o);
 	}
 	
-	public void showBusList(){
-		if(busOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < busOffers.size(); i++) {
-			System.out.println("Name: " + busOffers.get(i).getName());
-			System.out.println("User: " + busOffers.get(i).getUser().getName());
-			System.out.println("Category: Buses");
-			System.out.println("Description: " + busOffers.get(i).getDescription());
-			System.out.println("Price: " + busOffers.get(i).getPrice());
-		}
-	}
-	
 	@Override
 	protected void addToList(Offer offer) {
 		super.addToList(offer);
@@ -62,8 +48,7 @@ public abstract class Bus extends Automobile{
 			microBusOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return microBusOffers;
 		}
 

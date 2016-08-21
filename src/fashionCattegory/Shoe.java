@@ -19,19 +19,6 @@ public abstract class Shoe extends Fashion{
 		shoeOffers.remove(o);
 	}
 	
-	public static void showAccessoryList(){
-		if(shoeOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < shoeOffers.size(); i++) {
-			System.out.println("Name: " + shoeOffers.get(i).getName());
-			System.out.println("User: " + shoeOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + shoeOffers.get(i).getDescription());
-			System.out.println("Price: " + shoeOffers.get(i).getPrice());
-		}
-	}
 	@Override
 	protected void addToList(Offer offer){
 		shoeOffers.add(offer);
@@ -61,8 +48,7 @@ public abstract class Shoe extends Fashion{
 			menShoesOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return menShoesOffers;
 		}
 
@@ -100,9 +86,7 @@ public abstract class Shoe extends Fashion{
 			womenShoesOffers.remove(o);
 		}
 
-
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return womenShoesOffers;
 		}
 

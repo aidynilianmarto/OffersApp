@@ -19,20 +19,6 @@ public abstract class Jewelry extends Fashion{
 		jewelryOffers.remove(o);
 	}
 	
-	public static void showAccessoryList(){
-		if(jewelryOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < jewelryOffers.size(); i++) {
-			System.out.println("Name: " + jewelryOffers.get(i).getName());
-			System.out.println("User: " + jewelryOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + jewelryOffers.get(i).getDescription());
-			System.out.println("Price: " + jewelryOffers.get(i).getPrice());
-		}
-	}
-	
 	@Override
 	protected void addToList(Offer offer){
 		jewelryOffers.add(offer);
@@ -62,8 +48,7 @@ public abstract class Jewelry extends Fashion{
 			braceletOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return braceletOffers;
 		}
 
@@ -101,8 +86,7 @@ public abstract class Jewelry extends Fashion{
 			earingOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return earingOffers;
 		}
 		public static Earing getInstance() {
@@ -139,8 +123,7 @@ public abstract class Jewelry extends Fashion{
 			necklaceOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return necklaceOffers;
 		}
 
@@ -178,8 +161,7 @@ public abstract class Jewelry extends Fashion{
 			ringOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return ringOffers;
 		}
 

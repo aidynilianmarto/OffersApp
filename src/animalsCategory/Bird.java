@@ -17,20 +17,6 @@ private static ArrayList<Offer> birdOffers;
 		birdOffers.remove(o);
 	}
 	
-	public static void showBirdsList(){
-		if(birdOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < birdOffers.size(); i++) {
-			System.out.println("Name: " + birdOffers.get(i).getName());
-			System.out.println("User: " + birdOffers.get(i).getUser().getName());
-			System.out.println("Category: Dogs");
-			System.out.println("Description: " + birdOffers.get(i).getDescription());
-			System.out.println("Price: " + birdOffers.get(i).getPrice());
-		}
-	}
-	
 	@Override
 	protected void addToList(Offer offer){
 		birdOffers.add(offer);
@@ -57,8 +43,7 @@ private static ArrayList<Offer> birdOffers;
 			parrotOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return parrotOffers;
 			
 		}
@@ -94,8 +79,7 @@ private static ArrayList<Offer> birdOffers;
 			otherOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return otherOffers;
 		}
 

@@ -17,20 +17,6 @@ public abstract class Cat extends Animal {
 		catOffers.remove(o);
 	}
 
-	public static void showcCatsList() {
-		if (catOffers.size() == 0) {
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < catOffers.size(); i++) {
-			System.out.println("Name: " + catOffers.get(i).getName());
-			System.out.println("User: " + catOffers.get(i).getUser().getName());
-			System.out.println("Category: Cats");
-			System.out.println("Description: " + catOffers.get(i).getDescription());
-			System.out.println("Price: " + catOffers.get(i).getPrice());
-		}
-	}
-
 	@Override
 	protected void addToList(Offer offer) {
 		catOffers.add(offer);
@@ -51,9 +37,8 @@ public abstract class Cat extends Animal {
 			super.addToList(offer);
 			homelessOffers.add(offer);
 		}
-
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		
+		public static ArrayList<Offer> getListOfOffers() {
 			return homelessOffers;
 
 		}
@@ -90,8 +75,7 @@ public abstract class Cat extends Animal {
 			houseCatsOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return houseCatsOffers;
 		}
 

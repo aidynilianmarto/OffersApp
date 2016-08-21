@@ -219,7 +219,6 @@ public class User implements IUser{
 				Shop.offersByCategory.get(o.getCategory()).remove(o);
 				Shop.userAndOffer.get(this).remove(o);
 				o.getCategory().deleteOffer(o);
-				o.getCategory().getListOfOffers().remove(o);
 				return;
 			}
 			System.out.println("Sorry!The offer was recently removed!");

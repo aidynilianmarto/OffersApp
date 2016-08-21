@@ -10,6 +10,7 @@ import Offer.ICategory;
 import Offer.Offer;
 import User.User;
 import User.Admin;
+
 public class Demo {
 	public static void main(String[] args) {
 		User pesho = User.registration("Petur", "pesho", "123456789", "petur_ivanov@gmail.bg");
@@ -35,18 +36,23 @@ public class Demo {
 		gosho.logIn("goshko", "123456789");
 		gosho.addOffer(o3, bagAccessory);
 		pesho.deleteOffer(o2);
-		System.out.println("Fashion List:");
-		Fashion.showFashionOffer();
-		System.out.println("**********************");
-		System.out.println("Accessory List:");
-		Accessory.showAccessoryList();
-		System.out.println("**********************");
-		System.out.println("Glass List:");
-		ICategory.showListOfOffers(glassAccessory);
-		System.out.println("**********************");
-		System.out.println("Bag List:");
-		ICategory.showListOfOffers(bagAccessory);
-		
+//		System.out.println("Fashion List:");
+//		Fashion.showFashionOffer();
+//		System.out.println("**********************");
+//		System.out.println("Accessory List:");
+//		Accessory.showAccessoryList();
+//		ICategory.showListOfOffers(Fashion.getFashionOffers());
+//		System.out.println("**********************");
+//		System.out.println("Glass List:");
+//		ICategory.showListOfOffers(Glasses.getListOfOffers());
+//		System.out.println("**********************");
+//		System.out.println("Bag List:");
+//		ICategory.showListOfOffers(bagAccessory);
+		System.out.println("Fashion with method in ICATEGORY");
+		ICategory.showListOfOffers(Fashion.getFashionOffers());
+		System.out.println("Accessory");
+		ICategory.showListOfOffers(Accessory.getAccessoryOffers());
+		System.out.println("Other method");
 //		System.out.println("Bag Accesory: ");
 //		ICategory.showListOfOffers(bagAccessory);
 //		System.out.println("Tie Accesory: ");

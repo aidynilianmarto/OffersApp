@@ -18,20 +18,7 @@ public abstract class ComputerAccessories extends Electronics{
 		super.deleteOffer(o);
 		computerAccessoriesOffers.remove(o);
 	}
-	
-	public static void showAccessoryList(){
-		if(computerAccessoriesOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < computerAccessoriesOffers.size(); i++) {
-			System.out.println("Name: " + computerAccessoriesOffers.get(i).getName());
-			System.out.println("User: " + computerAccessoriesOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + computerAccessoriesOffers.get(i).getDescription());
-			System.out.println("Price: " + computerAccessoriesOffers.get(i).getPrice());
-		}
-	}
+
 	@Override
 	protected void addToList(Offer offer){
 		computerAccessoriesOffers.add(offer);
@@ -59,9 +46,7 @@ public abstract class ComputerAccessories extends Electronics{
 			cableOffers.remove(o);
 		}
 		
-
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return cableOffers;
 		}
 
@@ -100,9 +85,8 @@ public abstract class ComputerAccessories extends Electronics{
 				super.deleteOffer(o);
 				mouseOffers.remove(o);
 			}
-	
-			@Override
-			public ArrayList<Offer> getListOfOffers() {
+			
+			public static ArrayList<Offer> getListOfOffers() {
 				return mouseOffers;
 			}
 			
@@ -138,8 +122,7 @@ public abstract class ComputerAccessories extends Electronics{
 			keyboardOffers.remove(o);
 		}
 	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return keyboardOffers;
 		}
 		
@@ -176,8 +159,7 @@ public abstract class ComputerAccessories extends Electronics{
 			otherOffers.remove(o);
 		}
 	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return otherOffers;
 		}
 		

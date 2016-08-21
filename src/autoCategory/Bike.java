@@ -18,20 +18,6 @@ public abstract class Bike extends Automobile{
 		bikeOffers.remove(o);
 	}
 	
-	public void showBikeList(){
-		if(bikeOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < bikeOffers.size(); i++) {
-			System.out.println("Name: " + bikeOffers.get(i).getName());
-			System.out.println("User: " + bikeOffers.get(i).getUser().getName());
-			System.out.println("Category: Cars");
-			System.out.println("Description: " + bikeOffers.get(i).getDescription());
-			System.out.println("Price: " + bikeOffers.get(i).getPrice());
-		}
-	}
-	
 	@Override
 	protected void addToList(Offer offer) {
 		super.addToList(offer);
@@ -61,9 +47,8 @@ public abstract class Bike extends Automobile{
 			super.deleteOffer(o);
 			lowCubageOffers.remove(o);
 		}
-
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		
+		public static ArrayList<Offer> getListOfOffers() {
 			return lowCubageOffers;
 		}
 
@@ -102,8 +87,7 @@ public abstract class Bike extends Automobile{
 			midCubageOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return midCubageOffers;
 		}
 
@@ -142,8 +126,7 @@ public abstract class Bike extends Automobile{
 			highCubageOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return highCubageOffers;
 		}
 

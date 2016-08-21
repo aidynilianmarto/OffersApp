@@ -16,20 +16,6 @@ public abstract class Fish extends Animal {
 		fishOffers.remove(o);
 	}
 
-	public static void showFishesList() {
-		if (fishOffers.size() == 0) {
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < fishOffers.size(); i++) {
-			System.out.println("Name: " + fishOffers.get(i).getName());
-			System.out.println("User: " + fishOffers.get(i).getUser().getName());
-			System.out.println("Category: Fishes");
-			System.out.println("Description: " + fishOffers.get(i).getDescription());
-			System.out.println("Price: " + fishOffers.get(i).getPrice());
-		}
-	}
-
 	@Override
 	protected void addToList(Offer offer) {
 		fishOffers.add(offer);
@@ -57,8 +43,7 @@ public abstract class Fish extends Animal {
 			aquariumOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return aquariumOffers;
 
 		}
@@ -95,8 +80,7 @@ public abstract class Fish extends Animal {
 			otherOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return otherOffers;
 		}
 

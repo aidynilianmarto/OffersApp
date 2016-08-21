@@ -17,20 +17,6 @@ public abstract class SmartDevices extends Electronics{
 		super.deleteOffer(o);
 		smartDevicesOffers.remove(o);
 	}
-	
-	public static void showAccessoryList(){
-		if(smartDevicesOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < smartDevicesOffers.size(); i++) {
-			System.out.println("Name: " + smartDevicesOffers.get(i).getName());
-			System.out.println("User: " + smartDevicesOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + smartDevicesOffers.get(i).getDescription());
-			System.out.println("Price: " + smartDevicesOffers.get(i).getPrice());
-		}
-	}
 	@Override
 	protected void addToList(Offer offer){
 		smartDevicesOffers.add(offer);
@@ -58,8 +44,7 @@ public abstract class SmartDevices extends Electronics{
 			phoneOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return phoneOffers;
 		}
 		
@@ -96,8 +81,7 @@ public abstract class SmartDevices extends Electronics{
 			tabletOffers.remove(o);
 		}
 	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return tabletOffers;
 		}
 		
@@ -134,8 +118,7 @@ public abstract class SmartDevices extends Electronics{
 			readerOffers.remove(o);
 		}
 	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return readerOffers;
 		}
 		
@@ -171,9 +154,8 @@ public abstract class SmartDevices extends Electronics{
 			super.deleteOffer(o);
 			tvOffers.remove(o);
 		}
-	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		
+		public static ArrayList<Offer> getListOfOffers() {
 			return tvOffers;
 		}
 		
@@ -210,8 +192,7 @@ public abstract class SmartDevices extends Electronics{
 			cameraOffers.remove(o);
 		}
 	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return cameraOffers;
 		}
 		
@@ -248,8 +229,7 @@ public abstract class SmartDevices extends Electronics{
 			navigationOffers.remove(o);
 		}
 	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return navigationOffers;
 		}
 		

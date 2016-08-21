@@ -18,20 +18,6 @@ public abstract class Computer extends Electronics{
 		computerOffers.remove(o);
 	}
 	
-	public static void showAccessoryList(){
-		if(computerOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < computerOffers.size(); i++) {
-			System.out.println("Name: " + computerOffers.get(i).getName());
-			System.out.println("User: " + computerOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + computerOffers.get(i).getDescription());
-			System.out.println("Price: " + computerOffers.get(i).getPrice());
-		}
-	}
-	
 	@Override
 	protected void addToList(Offer offer){
 		computerOffers.add(offer);
@@ -59,8 +45,7 @@ public abstract class Computer extends Electronics{
 			laptopOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return laptopOffers;
 			
 		}
@@ -97,8 +82,7 @@ public abstract class Computer extends Electronics{
 			desktopOffers.remove(o);
 		}
 		
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return desktopOffers;
 		}
 

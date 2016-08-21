@@ -20,27 +20,11 @@ public class AbroadState extends RealState {
 
 	}
 
-	public static void showAbroadStateList() {
-		if (abroadStateOffers.size() == 0) {
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < abroadStateOffers.size(); i++) {
-			System.out.println("Name: " + abroadStateOffers.get(i).getName());
-			System.out.println("User: " + abroadStateOffers.get(i).getUser().getName());
-			System.out.println("Category: Abroad states");
-			System.out.println("Description: " + abroadStateOffers.get(i).getDescription());
-			System.out.println("Price: " + abroadStateOffers.get(i).getPrice());
-		}
-	}
-
 	@Override
 	public void addOffer(Offer offer) {
 		abroadStateOffers.add(offer);
 	}
-
-	@Override
-	public ArrayList<Offer> getListOfOffers() {
+	public static ArrayList<Offer> getListOfOffers() {
 		return abroadStateOffers;
 	}
 

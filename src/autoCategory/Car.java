@@ -18,20 +18,6 @@ public abstract class Car extends Automobile{
 		carOffers.remove(o);
 	}
 	
-	public void showCarList(){
-		if(carOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < carOffers.size(); i++) {
-			System.out.println("Name: " + carOffers.get(i).getName());
-			System.out.println("User: " + carOffers.get(i).getUser().getName());
-			System.out.println("Category: Cars");
-			System.out.println("Description: " + carOffers.get(i).getDescription());
-			System.out.println("Price: " + carOffers.get(i).getPrice());
-		}
-	}
-	
 	@Override
 	protected void addToList(Offer offer) {
 		super.addToList(offer);
@@ -61,9 +47,8 @@ public abstract class Car extends Automobile{
 			super.deleteOffer(o);
 			hatchbackOffers.remove(o);
 		}
-
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		
+		public static ArrayList<Offer> getListOfOffers() {
 			return hatchbackOffers;
 		}
 
@@ -102,8 +87,7 @@ public abstract class Car extends Automobile{
 			sedanOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return sedanOffers;
 		}
 
@@ -142,8 +126,7 @@ public abstract class Car extends Automobile{
 			combiOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return carOffers;
 		}
 
@@ -182,8 +165,7 @@ public abstract class Car extends Automobile{
 			sUVOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return sUVOffers;
 		}
 
@@ -222,8 +204,7 @@ public abstract class Car extends Automobile{
 			cabrioOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static  ArrayList<Offer> getListOfOffers() {
 			return cabrioOffers;
 		}
 

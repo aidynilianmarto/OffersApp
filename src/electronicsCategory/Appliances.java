@@ -18,21 +18,6 @@ public abstract class Appliances extends Electronics{
 		super.deleteOffer(o);
 		applianceOffers.remove(o);
 	}
-	
-	public static void showAccessoryList(){
-		if(applianceOffers.size()==0){
-			System.out.println("No offers in this category!");
-			return;
-		}
-		for (int i = 0; i < applianceOffers.size(); i++) {
-			System.out.println("Name: " + applianceOffers.get(i).getName());
-			System.out.println("User: " + applianceOffers.get(i).getUser().getName());
-			System.out.println("Category: Accessorry");
-			System.out.println("Description: " + applianceOffers.get(i).getDescription());
-			System.out.println("Price: " + applianceOffers.get(i).getPrice());
-		}
-	}
-	
 	@Override
 	protected void addToList(Offer offer){
 		applianceOffers.add(offer);
@@ -60,8 +45,7 @@ public static class Stove extends Appliances{
 			stoveOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return stoveOffers;
 		}
 
@@ -99,9 +83,7 @@ public static class Stove extends Appliances{
 			refrigiratorOffers.remove(o);
 		}
 
-	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return refrigiratorOffers;
 		}
 
@@ -138,8 +120,7 @@ public static class Stove extends Appliances{
 			washerOffers.remove(o);
 		}
 	
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return washerOffers;
 		}
 
@@ -176,8 +157,7 @@ public static class Stove extends Appliances{
 			dishWasherOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return dishWasherOffers;
 		}
 
@@ -214,8 +194,7 @@ public static class Stove extends Appliances{
 			airConditionerOffers.remove(o);
 		}
 
-		@Override
-		public ArrayList<Offer> getListOfOffers() {
+		public static ArrayList<Offer> getListOfOffers() {
 			return airConditionerOffers;
 		}
 
